@@ -3,5 +3,24 @@
   "rules": {
     "no-empty-source": null,
     "declaration-no-important": true
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.scss", "**/*.scss"],
+      "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-prettier",
+        "stylelint-config-standard-scss"
+      ],
+      "rules": {
+        "no-empty-source": null,
+        "declaration-no-important": true,
+        "value-keyword-case": null,
+        "function-no-unknown": null,
+        "scss/function-no-unknown": [true, { "ignoreFunctions": ["/^mat.*/"] }],
+        "at-rule-no-unknown": null,
+        "scss/at-rule-no-unknown": true
+      }
+    }
+  ]
 }
