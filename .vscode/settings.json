@@ -29,5 +29,6 @@
   "eslint.validate": ["javascript", "typescript", "html"],
   "[html][javascript][typescript][json][jsonc][css][scss][markdown][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "scss.scannerExclude": ["**/.git", "**/bower_components"]
 }
