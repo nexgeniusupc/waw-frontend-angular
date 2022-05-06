@@ -27,7 +27,9 @@
   "typescript.referencesCodeLens.enabled": true,
   "eslint.packageManager": "npm",
   "eslint.validate": ["javascript", "typescript", "html"],
-  "[html][javascript][typescript][json][jsonc][css][markdown][yaml]": {
+  "[html][javascript][typescript][json][jsonc][css][scss][markdown][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "scss.scannerExclude": ["**/.git", "**/bower_components"],
+  "stylelint.validate": ["css", "scss", "postcss"]
 }
