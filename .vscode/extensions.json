@@ -6,6 +6,7 @@
     "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
     "DavidAnson.vscode-markdownlint",
-    "EditorConfig.EditorConfig"
+    "EditorConfig.EditorConfig",
+    "mrmlnc.vscode-scss"
   ]
 }
