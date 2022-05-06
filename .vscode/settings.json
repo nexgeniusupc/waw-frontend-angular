@@ -15,7 +15,7 @@
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
     "*.component.ts": "${capture}.component.html, ${capture}.component.css, ${capture}.component.spec.ts",
     "package.json": "package-lock.json, yarn.lock",
-    ".eslintrc*": ".eslintignore",
+    ".eslintrc*": ".eslintignore, .eslintcache",
     ".prettierrc*": ".prettierignore",
     ".stylelintrc*": ".stylelintignore",
     "environment.ts": "environment.*.ts",
