@@ -16,10 +16,10 @@ describe("AppComponent", () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-starter'`, () => {
+  it(`should have as title 'waw-frontend-angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual("angular-starter");
+    expect(app.title).toEqual("waw-frontend-angular");
   });
 
   it("should render title", () => {
@@ -27,7 +27,7 @@ describe("AppComponent", () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector(".content span")?.textContent).toContain(
-      "angular-starter app is running!"
+      "waw-frontend-angular app is running!"
     );
   });
 });
