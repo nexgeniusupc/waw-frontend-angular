@@ -11,12 +11,12 @@
     "e2e": "ng e2e",
     "lint": "concurrently -s -n lint: 'npm:lint:*(!fix)'",
     "lint:ng": "ng lint",
-    "lint:css": "stylelint src/**/*.css",
+    "lint:css": "stylelint src/**/*.css src/**/*.scss",
     "lint:md": "markdownlint-cli2 README.md \"**/*.md\" \".github/**/*.md\" \"#node_modules\"",
     "lint:prettier": "prettier --check .",
     "lint:fix": "concurrently -s -n lint:fix: 'npm:lint:fix:*'",
     "lint:fix:ng": "ng lint --fix",
-    "lint:fix:css": "stylelint src/**/*.css --fix",
+    "lint:fix:css": "stylelint src/**/*.css src/**/*.scss --fix",
     "lint:fix:md": "markdownlint-cli2-fix README.md \"**/*.md\" \".github/**/*.md\" \"#node_modules\"",
     "lint:fix:prettier": "prettier --write .",
     "prepare": "husky install"
@@ -73,8 +73,8 @@
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix",
-    "*.css": "stylelint --fix",
-    "*.{js,ts,css,md,json,yml}": "prettier --write",
+    "*.{css,scss}": "stylelint --fix",
+    "*.{js,ts,css,scss,md,json,yml}": "prettier --write",
     "*.md": "markdownlint-cli2-fix"
   },
   "config": {
