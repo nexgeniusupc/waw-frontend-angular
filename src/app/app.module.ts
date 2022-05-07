@@ -12,6 +12,7 @@ import { AppComponent } from "./app.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
+import { JobsComponent } from "./jobs/jobs.component";
 
 type ImportedModule = Type<any> | ModuleWithProviders<{}> | any[];
 
@@ -30,6 +31,7 @@ export const imports: ImportedModule[] = [
     ProfileComponent,
     SignInComponent,
     SignUpComponent,
+    JobsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ...imports],
   providers: [],
