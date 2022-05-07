@@ -9,8 +9,9 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { SignUpComponent } from "./auth/pages/signup/signup.component";
 import { ProfileComponent } from "./profile/profile.component";
+import { SignInComponent } from "./auth/pages/signin/signin.component";
+import { SignUpComponent } from "./auth/pages/signup/signup.component";
 
 type ImportedModule = Type<any> | ModuleWithProviders<{}> | any[];
 
@@ -24,7 +25,12 @@ export const imports: ImportedModule[] = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ProfileComponent, SignUpComponent],
+  declarations: [
+    AppComponent,
+    ProfileComponent,
+    SignInComponent,
+    SignUpComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, ...imports],
   providers: [],
   bootstrap: [AppComponent],
