@@ -28,6 +28,7 @@ export const imports: ImportedModule[] = [
   MatFormFieldModule,
   MatInputModule,
   MatSlideToggleModule,
+  FormsModule,
 ];
 
 @NgModule({
