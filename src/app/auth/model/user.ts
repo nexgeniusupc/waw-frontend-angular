@@ -1,3 +1,16 @@
+export interface UserImage {
+  href: string;
+  alt?: string;
+}
+
+export interface UserProject {
+  title: string;
+  summary: string;
+  timestamp: number;
+  href?: string;
+  image?: UserImage;
+}
+
 export interface User {
   preferredName: string;
   fullName: string;
@@ -6,4 +19,7 @@ export interface User {
   profileViews: number;
   biography: string;
   about: string;
+  projects: UserProject[];
+  cover?: UserImage;
+  picture?: UserImage;
 }
