@@ -13,6 +13,11 @@ import { ProfileComponent } from "./profile/profile.component";
 import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
 import { JobsComponent } from "./jobs/jobs.component";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatTableModule } from "@angular/material/table";
+import { FormsModule } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 type ImportedModule = Type<any> | ModuleWithProviders<{}> | any[];
 
@@ -33,7 +38,16 @@ export const imports: ImportedModule[] = [
     SignUpComponent,
     JobsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ...imports],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ...imports,
+    MatDividerModule,
+    MatTableModule,
+    FormsModule,
+    MatButtonModule,
+    MatPaginatorModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
