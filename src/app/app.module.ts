@@ -29,6 +29,10 @@ export const imports: ImportedModule[] = [
   MatInputModule,
   MatSlideToggleModule,
   FormsModule,
+  MatDividerModule,
+  MatTableModule,
+  MatButtonModule,
+  MatPaginatorModule,
 ];
 
 @NgModule({
@@ -39,16 +43,7 @@ export const imports: ImportedModule[] = [
     SignUpComponent,
     JobsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ...imports,
-    MatDividerModule,
-    MatTableModule,
-    FormsModule,
-    MatButtonModule,
-    MatPaginatorModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, ...imports],
   providers: [],
   bootstrap: [AppComponent],
 })
