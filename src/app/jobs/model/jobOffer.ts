@@ -3,5 +3,4 @@ export class JobOffer {
   title: any;
   description: any;
   salaryRange: any;
-  published: any;
 }
