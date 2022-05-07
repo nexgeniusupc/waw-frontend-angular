@@ -30,6 +30,9 @@
   "[html][javascript][typescript][json][jsonc][css][scss][markdown][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
   "scss.scannerExclude": ["**/.git", "**/bower_components"],
   "stylelint.validate": ["css", "scss", "postcss"]
 }
