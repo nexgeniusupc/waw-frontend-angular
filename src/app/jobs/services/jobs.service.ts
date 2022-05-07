@@ -34,11 +34,11 @@ export class JobsService {
   }
 
   // create Offer
-  /*  createItem(item: any): Observable<JobOffer> {
+  createItem(item: any): Observable<JobOffer> {
     return this.http
       .post<JobOffer>(this.basePath, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
-  }*/
+  }
 
   // Get All Offer
   getList(): Observable<JobOffer> {
@@ -47,12 +47,11 @@ export class JobsService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  /* getItem(id: any): Observable<JobOffer> {
+  getItem(id: any): Observable<JobOffer> {
     return this.http
       .get<JobOffer>(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-*/
   // Delete Offer
   deleteItem(id: any) {
     return this.http
@@ -61,7 +60,8 @@ export class JobsService {
   }
 
   // Update Offer
-  /* updateItem(id: any, item: any): Observable<JobOffer> {
+
+  updateItem(id: any, item: any): Observable<JobOffer> {
     return this.http
       .put<JobOffer>(
         `${this.basePath}/${id}`,
@@ -69,5 +69,5 @@ export class JobsService {
         this.httpOptions
       )
       .pipe(retry(2), catchError(this.handleError));
-  }*/
+  }
 }

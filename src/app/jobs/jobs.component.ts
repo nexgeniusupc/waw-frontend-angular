@@ -44,6 +44,19 @@ export class JobsComponent implements OnInit {
     this.jobOfferData = _.cloneDeep(element);
     this.isEditMode = true;
   }
+  updateJobOffers() {
+    this.jobsService
+      .updateItem(this.jobOfferData.id, this.jobOfferData)
+      .subscribe((response: any) => {
+        this.dataSource.data = this.dataSource.data.map((o: JobOffer) => {
+          if (o.id === response.id) {
+            o = response;
+          }
+          return o;
+        });
+      });
+  }
+
   cancelEdit() {
     this.isEditMode = false;
     this.jobOfferForm.resetForm();
@@ -56,5 +69,32 @@ export class JobsComponent implements OnInit {
       });
       console.log(this.dataSource.data);
     });
+  }
+
+  addJobOffer() {
+    this.jobOfferData.id = 0;
+    this.jobsService
+      .createItem(this.jobOfferData)
+      .subscribe((response: any) => {
+        this.dataSource.data.push({ ...response });
+        this.dataSource.data = this.dataSource.data.map((o: any) => {
+          return o;
+        });
+      });
+  }
+  onSubmit() {
+    if (this.jobOfferForm.form.valid) {
+      console.log("valid");
+      if (this.isEditMode) {
+        console.log("about to update");
+        this.updateJobOffers();
+      } else {
+        console.log("about to add");
+        this.addJobOffer();
+      }
+      this.cancelEdit();
+    } else {
+      console.log("Invalid data");
+    }
   }
 }
