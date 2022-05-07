@@ -10,7 +10,7 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ProfileComponent } from "./profile/profile.component";
-import { SignInComponent } from "./auth/pages/sign-in/sign-in.component";
+import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
 
 type ImportedModule = Type<any> | ModuleWithProviders<{}> | any[];

@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "app-sign-in",
-  templateUrl: "./sign-in.component.html",
-  styleUrls: ["./sign-in.component.css"],
+  selector: "app-signin",
+  templateUrl: "./signin.component.html",
+  styleUrls: ["./signin.component.css"],
 })
 export class SignInComponent {
   constructor() {}
