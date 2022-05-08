@@ -1,5 +1,11 @@
-<app-jobs></app-jobs>
+
 <mat-toolbar color="primary">
-  <h1>WAW</h1>
+  <button mat-flat-button color="primary" [routerLink]="'account/profile'">WAW</button>
+
+  <span class="example-spacer"></span>
+  <button mat-raised-button  mat-icon-button matTooltip="Post a Job" [routerLink]="'account/jobs'" class="publish-icon" aria-label="Publish icon-button with publish icon">
+    <mat-icon>publish</mat-icon>
+  </button>
 </mat-toolbar>
+
 <router-outlet></router-outlet>

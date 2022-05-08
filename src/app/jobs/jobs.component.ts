@@ -40,7 +40,7 @@ export class JobsComponent implements OnInit {
       this.dataSource.data = response;
     });
   }
-  editItem(element: any) {
+  editItem(element: JobOffer) {
     this.jobOfferData = _.cloneDeep(element);
     this.isEditMode = true;
   }
@@ -62,7 +62,7 @@ export class JobsComponent implements OnInit {
     this.jobOfferForm.resetForm();
   }
 
-  deleteItem(id: string) {
+  deleteItem(id: number) {
     this.jobsService.deleteItem(id).subscribe(() => {
       this.dataSource.data = this.dataSource.data.filter((o: any) => {
         return o.id !== id ? o : false;

@@ -11,7 +11,7 @@ import { JobOffer } from "../model/jobOffer";
   providedIn: "root",
 })
 export class JobsService {
-  basePath = "http://localhost:6009/jobOffers";
+  basePath = "http://localhost:3000/jobOffers";
   constructor(private http: HttpClient) {}
   httpOptions = {
     headers: new HttpHeaders({
@@ -55,7 +55,7 @@ export class JobsService {
   // Delete Offer
   deleteItem(id: any) {
     return this.http
-      .delete<JobOffer>(`${this.basePath}/${id}`, this.httpOptions)
+      .delete(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 

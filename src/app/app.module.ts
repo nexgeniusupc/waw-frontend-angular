@@ -18,6 +18,8 @@ import { MatTableModule } from "@angular/material/table";
 import { FormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { HttpClientModule } from "@angular/common/http";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 type ImportedModule = Type<any> | ModuleWithProviders<{}> | any[];
 
@@ -33,6 +35,8 @@ export const imports: ImportedModule[] = [
   MatTableModule,
   MatButtonModule,
   MatPaginatorModule,
+  HttpClientModule,
+  MatTooltipModule,
 ];
 
 @NgModule({
