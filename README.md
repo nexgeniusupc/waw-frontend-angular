@@ -1,6 +1,6 @@
-# Angular Starter Project
+# [Angular Starter Project](https://github.com/dalbitresb12/angular-starter)
 
-This template should help get you started developing with Angular 13. It includes opinionated configurations for VS Code, ESLint, Stylelint, Prettier and Commitlint with commit hooks.
+This [template](https://github.com/dalbitresb12/angular-starter) should help get you started developing with Angular 13. It includes opinionated configurations for VS Code, ESLint, Stylelint, Prettier and Commitlint with commit hooks.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
