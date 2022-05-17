@@ -9,7 +9,9 @@
         "createDefaultProgram": true
       },
       "extends": [
-        "plugin:@angular-eslint/recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended--extra",
         "plugin:@angular-eslint/template/process-inline-templates",
         "prettier"
       ],
@@ -62,7 +64,7 @@
         "no-else-return": [
           "error",
           {
-            "allowElseIf": false
+            "allowElseIf": true
           }
         ],
         "no-lonely-if": "error",
