@@ -16,7 +16,7 @@
     "package.json": "package-lock.json, yarn.lock",
     ".eslintrc*": ".eslintignore, .eslintcache",
     ".prettierrc*": ".prettierignore",
-    ".stylelintrc*": ".stylelintignore",
+    ".stylelintrc*": ".stylelintignore, .stylelintcache",
     "environment.ts": "environment.*.ts",
     "tsconfig.json": "tsconfig.*.json"
   },
