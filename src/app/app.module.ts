@@ -1,42 +1,43 @@
-import { NgModule, Type, ModuleWithProviders } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatIconModule } from "@angular/material/icon";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
-import { JobsComponent } from "./jobs/jobs.component";
-import { MatDividerModule } from "@angular/material/divider";
+import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
+
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatTableModule } from "@angular/material/table";
-import { FormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatPaginatorModule } from "@angular/material/paginator";
-import { HttpClientModule } from "@angular/common/http";
+import { MatSortModule } from "@angular/material/sort";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatSelectModule } from "@angular/material/select";
 
-type ImportedModule = Type<any> | ModuleWithProviders<{}> | any[];
-
-export const imports: ImportedModule[] = [
+export const imports: NonNullable<NgModule["imports"]> = [
   BrowserAnimationsModule,
+  HttpClientModule,
+  FormsModule,
   MatToolbarModule,
   MatIconModule,
   MatFormFieldModule,
   MatInputModule,
   MatSlideToggleModule,
-  FormsModule,
-  MatDividerModule,
   MatTableModule,
   MatButtonModule,
   MatPaginatorModule,
-  HttpClientModule,
+  MatSortModule,
   MatTooltipModule,
+  MatSelectModule,
 ];
 
 @NgModule({

@@ -1,11 +1,10 @@
+<mat-toolbar color="primary" class="flex justify-between">
+  <h1>WAW</h1>
 
-<mat-toolbar color="primary">
-  <button mat-flat-button color="primary" [routerLink]="'account/profile'">WAW</button>
-
-  <span class="example-spacer"></span>
-  <button mat-raised-button  mat-icon-button matTooltip="Post a Job" [routerLink]="'account/jobs'" class="publish-icon" aria-label="Publish icon-button with publish icon">
-    <mat-icon>publish</mat-icon>
-  </button>
+  <div class="space-x-1">
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/account/jobs">Jobs</button>
+  </div>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

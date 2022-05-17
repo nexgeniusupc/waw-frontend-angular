@@ -1,28 +1,16 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { TestBed } from "@angular/core/testing";
 
-// import { JobsService } from "./jobs.service";
-import { JobsComponent } from "../jobs.component";
+import { JobsService } from "./jobs.service";
 
-describe("JobsComponent", () => {
-  // let service: JobsService;
-
-  let component: JobsComponent;
-  let fixture: ComponentFixture<JobsComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [JobsComponent],
-    }).compileComponents();
-    // service = TestBed.inject(JobsService);
-  });
+describe("JobsService", () => {
+  let service: JobsService;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JobsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(JobsService);
   });
 
   it("should be created", () => {
-    expect(component).toBeTruthy();
+    expect(service).toBeTruthy();
   });
 });
