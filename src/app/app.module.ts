@@ -1,4 +1,4 @@
-import { NgModule, Type, ModuleWithProviders } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -13,9 +13,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
 
-type ImportedModule = Type<any> | ModuleWithProviders<{}> | any[];
-
-export const imports: ImportedModule[] = [
+export const imports: NonNullable<NgModule["imports"]> = [
   BrowserAnimationsModule,
   MatToolbarModule,
   MatIconModule,

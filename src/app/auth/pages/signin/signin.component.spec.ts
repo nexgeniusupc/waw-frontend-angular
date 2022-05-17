@@ -2,12 +2,15 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { SignInComponent } from "./signin.component";
 
+import { imports } from "src/app/app.module";
+
 describe("SignInComponent", () => {
   let component: SignInComponent;
   let fixture: ComponentFixture<SignInComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [...imports],
       declarations: [SignInComponent],
     }).compileComponents();
   });
