@@ -3,7 +3,7 @@ name: tests
 on: [pull_request]
 
 jobs:
-  vitest:
+  ng:
     name: 'ng (node: ${{ matrix.node }}, os: ${{ matrix.os }})'
     runs-on: ${{ matrix.os }}
     strategy:
