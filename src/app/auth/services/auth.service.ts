@@ -16,9 +16,7 @@ export class AuthService {
     about:
       "I'm more experienced in e-commerce web projects and mobile banking apps, but also like to work with creative projects, such as landing pages or unusual corporate websites.",
   };
-  static loggedIn: boolean = true;
-
-  constructor() {}
+  static loggedIn = true;
 
   static login(): void {
     this.loggedIn = true;
