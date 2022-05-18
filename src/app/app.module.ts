@@ -24,6 +24,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
 
 export const imports: NonNullable<NgModule["imports"]> = [
+  AppRoutingModule,
   BrowserAnimationsModule,
   HttpClientModule,
   FormsModule,
@@ -48,7 +49,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
     SignUpComponent,
     JobsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ...imports],
+  imports: [BrowserModule, ...imports],
   providers: [],
   bootstrap: [AppComponent],
 })

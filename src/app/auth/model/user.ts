@@ -3,7 +3,8 @@ export interface UserImage {
   alt?: string;
 }
 
-export interface UserProject {
+export interface Project {
+  id: number;
   title: string;
   summary: string;
   timestamp: number;
@@ -12,6 +13,7 @@ export interface UserProject {
 }
 
 export interface User {
+  id: number;
   preferredName: string;
   fullName: string;
   email: string;
@@ -19,7 +21,6 @@ export interface User {
   profileViews: number;
   biography: string;
   about: string;
-  projects: UserProject[];
   cover?: UserImage;
   picture?: UserImage;
 }
