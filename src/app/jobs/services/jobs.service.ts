@@ -12,7 +12,7 @@ import { environment } from "src/environments/environment";
   providedIn: "root",
 })
 export class JobsService {
-  private basePath = `${environment.apiUrlBase}/jobOffers`;
+  private basePath = `${environment.apiUrlBase}/jobs`;
 
   private httpOptions = {
     headers: new HttpHeaders({
