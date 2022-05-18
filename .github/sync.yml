@@ -1,0 +1,13 @@
+futureleadersupc/waw-backend-json:
+  - source: server/db.json
+    dest: db.json
+  - source: server/routes.json
+    dest: routes.json
+  - source: .github/workflows/sync.yml
+    dest: .github/workflows/sync.yml
+
+futureleadersupc/waw-frontend-vue:
+  - source: server/
+    dest: server/
+  - source: .github/workflows/sync.yml
+    dest: .github/workflows/sync.yml

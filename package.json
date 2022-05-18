@@ -1,27 +1,29 @@
 {
   "name": "waw-frontend-angular",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "dev": "concurrently -s -n dev: 'npm:dev:*'",
+    "dev:ng": "ng serve --port 4200",
+    "dev:db": "json-server --port 4201 --routes server/routes.json server/db.json --watch",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:watch": "ng test --watch",
     "e2e": "ng e2e",
     "lint": "concurrently -s -n lint: 'npm:lint:*(!fix)'",
-    "lint:js": "eslint --cache .",
-    "lint:css": "stylelint src/**/*.css src/**/*.scss",
+    "lint:eslint": "eslint --cache --ext .js,.ts,.html .",
+    "lint:css": "stylelint --cache src/**/*.css",
     "lint:md": "markdownlint-cli2 README.md \"**/*.md\" \".github/**/*.md\" \"#node_modules\"",
     "lint:prettier": "prettier --check .",
     "lint:fix": "concurrently -s -n lint:fix: 'npm:lint:fix:*'",
-    "lint:fix:js": "eslint --cache --fix .",
-    "lint:fix:css": "stylelint src/**/*.css src/**/*.scss --fix",
+    "lint:fix:eslint": "eslint --cache --ext .js,.ts,.html --fix .",
+    "lint:fix:css": "stylelint --cache src/**/*.css --fix",
     "lint:fix:md": "markdownlint-cli2-fix README.md \"**/*.md\" \".github/**/*.md\" \"#node_modules\"",
     "lint:fix:prettier": "prettier --write .",
     "prepare": "husky install"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
     "@angular/cdk": "^13.3.6",
@@ -59,6 +61,7 @@
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.4",
     "jasmine-core": "~4.0.0",
+    "json-server": "^0.17.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.1.0",
@@ -77,13 +80,13 @@
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix",
-    "*.{css,scss}": "stylelint --fix",
+    "*.{css,scss}": "stylelint --cache --fix",
     "*.{js,ts,css,scss,md,json,yml}": "prettier --write",
     "*.md": "markdownlint-cli2-fix"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-conventional-changelog"
     }
   }
 }

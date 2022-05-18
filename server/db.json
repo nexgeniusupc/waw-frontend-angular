@@ -1,0 +1,53 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" },
+    { "id": 2, "title": "another post", "author": "dalbitresb12" }
+  ],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "profile": { "name": "typicode" },
+
+  "jobOffers": [
+    {
+      "id": 1,
+      "title": "Remote Software Engineer",
+      "description": "This is a unique role that offers broad exposure to the systems and data that span our entire business. We are eager to find underrepresented candidates who are early in their career and are looking for a position where they can assume responsibility for core systems and want to work on projects which have immediate and significant business impact.",
+      "salaryRange": "$115k-$117k",
+      "published": true
+    },
+    {
+      "id": 2,
+      "title": "Remote Senior Embedded Android Specialist",
+      "description": "Hinge Health is building a digital MSK clinic and is looking for experienced embedded developers to improve our computer vision SDK on Android. You will be building a system that uses computer vision to analyze patient movement to help diagnose, treat and prevent MSK conditions.",
+      "salaryRange": "$145k-$157k",
+      "published": true
+    },
+    {
+      "id": 3,
+      "title": "Remote Lead UX Researcher Motion",
+      "description": "We’re looking for a mission-driven individual to join us in creating engaging and effective experiences to empower successful behavioral health change.    Thought Leader: This person will be a thought leader and key contributor within the Design and UX and R+D teams.",
+      "salaryRange": "$145k-$160k",
+      "published": false
+    },
+    {
+      "id": 4,
+      "title": "Remote Software Engineer Privacy",
+      "description": "How you will help At HealthVerity, privacy is at the forefront of our platform. As a Software Engineer on the Privacy Engineering team, you will support and extend the core technologies that preserve the privacy of patient and consumer data across a number of HealthVerity’s products and services. You will improve the core algorithms that power our patient de-identification and linkage technology. ",
+      "salaryRange": "$150k-$160k",
+      "published": false
+    },
+    {
+      "id": 5,
+      "title": "Remote Software Engineer Data Transmission",
+      "description": "How you will help As a Software Engineer on the Data Transmission Engineering team, you will develop and maintain the services and tools powering HealthVerity’s data pipelines. This includes the ingestion of raw data into our petabyte sized warehouse -- all the way to the delivery of cleaned, de-identified and linked data to our clients. ",
+      "salaryRange": "$145k-$147k",
+      "published": true
+    },
+    {
+      "id": 6,
+      "title": "Remote Full Stack Software Engineer CPT",
+      "description": " You will support the engineering team and implement automation to fortify and expand our current technical processes. You will develop a strong technical understanding of the components of our system and work with internal resources to solve any challenges that may arise.",
+      "salaryRange": "$135k-$157k",
+      "published": false
+    }
+  ]
+}
