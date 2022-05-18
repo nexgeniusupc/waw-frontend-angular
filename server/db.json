@@ -1,12 +1,89 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "another post", "author": "dalbitresb12" }
+  "users": [
+    {
+      "id": 1,
+      "preferredName": "John",
+      "fullName": "John Doe",
+      "email": "john.doe@gmail.com",
+      "location": "Lima, Peru",
+      "profileViews": 367,
+      "biography": "Freelance UX/UI designer, 80+ projects in Web, Mobile (Android & iOS) and creative projects. Open to offers.",
+      "about": "I'm more experienced in e-commerce web projects and mobile banking apps, but also like to work with creative projects, such as landing pages or unusual corporate websites.",
+      "cover": {
+        "href": "https://unsplash.com/photos/YLSwjSy7stw/download?w=640",
+        "alt": "Books on a bookshelf"
+      },
+      "picture": {
+        "href": "https://unsplash.com/photos/YUu9UAcOKZ4/download?w=640",
+        "alt": "John's profile picture"
+      }
+    },
+    {
+      "id": 2,
+      "preferredName": "Katelynn",
+      "fullName": "Katelynn Medhurst",
+      "email": "katelynn.medhurst@gmail.com",
+      "location": "Bogota, Colombia",
+      "profileViews": 252,
+      "biography": "Frontend Web Developer & UI Designer, 20+ projects in Web.",
+      "about": "I'm more experienced in single-page applications, but I like challenges such as landing pages or unusual corporate websites.",
+      "cover": {
+        "href": "https://unsplash.com/photos/vI5XwPbGvmY/download?w=640",
+        "alt": "White and blue smoke illustration"
+      },
+      "picture": {
+        "href": "https://unsplash.com/photos/AJIqZDAUD7A/download?w=640",
+        "alt": "Katelynn's profile picture"
+      }
+    }
   ],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" },
-
-  "jobOffers": [
+  "projects": [
+    {
+      "id": 1,
+      "title": "Zara Redesign Concept",
+      "summary": "UX/UI Design",
+      "timestamp": 1562284800000,
+      "image": {
+        "href": "https://unsplash.com/photos/T6fDN60bMWY/download?w=640",
+        "alt": "Close up photo of black Android smartphone with the word 'design' on the screen"
+      },
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "SCTHON Event Brand Identity",
+      "summary": "Graphic Design",
+      "timestamp": 1553990400000,
+      "image": {
+        "href": "https://unsplash.com/photos/v9vII5gV8Lw/download?w=640",
+        "alt": "Silver iMac, Apple keyboard and tablet showing logos of the Adobe suite of products"
+      },
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "title": "Dzord Brand Identity",
+      "summary": "Graphic Design",
+      "timestamp": 1459728000000,
+      "image": {
+        "href": "https://unsplash.com/photos/CGpifH3FjOA/download?w=640",
+        "alt": "Graphic designer working on a Macbook laptop using a trackpad, color charts and markers"
+      },
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "title": "Google Search UI Redesign",
+      "summary": "UI Design",
+      "timestamp": 1586476800000,
+      "image": {
+        "href": "https://unsplash.com/photos/UWVJaDvXW_c/download?w=640",
+        "alt": "Google search home page on a mobile phone"
+      },
+      "userId": 2
+    }
+  ],
+  "jobs": [
     {
       "id": 1,
       "title": "Remote Software Engineer",
@@ -24,28 +101,28 @@
     {
       "id": 3,
       "title": "Remote Lead UX Researcher Motion",
-      "description": "We’re looking for a mission-driven individual to join us in creating engaging and effective experiences to empower successful behavioral health change.    Thought Leader: This person will be a thought leader and key contributor within the Design and UX and R+D teams.",
+      "description": "We're looking for a mission-driven individual to join us in creating engaging and effective experiences to empower successful behavioral health change. Thought Leader: This person will be a thought leader and key contributor within the Design and UX and R+D teams.",
       "salaryRange": "$145k-$160k",
       "published": false
     },
     {
       "id": 4,
       "title": "Remote Software Engineer Privacy",
-      "description": "How you will help At HealthVerity, privacy is at the forefront of our platform. As a Software Engineer on the Privacy Engineering team, you will support and extend the core technologies that preserve the privacy of patient and consumer data across a number of HealthVerity’s products and services. You will improve the core algorithms that power our patient de-identification and linkage technology. ",
+      "description": "How you will help At HealthVerity, privacy is at the forefront of our platform. As a Software Engineer on the Privacy Engineering team, you will support and extend the core technologies that preserve the privacy of patient and consumer data across a number of HealthVerity's products and services. You will improve the core algorithms that power our patient de-identification and linkage technology.",
       "salaryRange": "$150k-$160k",
       "published": false
     },
     {
       "id": 5,
       "title": "Remote Software Engineer Data Transmission",
-      "description": "How you will help As a Software Engineer on the Data Transmission Engineering team, you will develop and maintain the services and tools powering HealthVerity’s data pipelines. This includes the ingestion of raw data into our petabyte sized warehouse -- all the way to the delivery of cleaned, de-identified and linked data to our clients. ",
+      "description": "How you will help As a Software Engineer on the Data Transmission Engineering team, you will develop and maintain the services and tools powering HealthVerity's data pipelines. This includes the ingestion of raw data into our petabyte sized warehouse -- all the way to the delivery of cleaned, de-identified and linked data to our clients.",
       "salaryRange": "$145k-$147k",
       "published": true
     },
     {
       "id": 6,
       "title": "Remote Full Stack Software Engineer CPT",
-      "description": " You will support the engineering team and implement automation to fortify and expand our current technical processes. You will develop a strong technical understanding of the components of our system and work with internal resources to solve any challenges that may arise.",
+      "description": "You will support the engineering team and implement automation to fortify and expand our current technical processes. You will develop a strong technical understanding of the components of our system and work with internal resources to solve any challenges that may arise.",
       "salaryRange": "$135k-$157k",
       "published": false
     }
