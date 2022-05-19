@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
-import { Project, User } from "../auth/model/user";
-import { AuthService } from "../auth/services/auth.service";
-import { ProjectsService } from "../auth/services/projects.service";
-import { Nullable } from "../common/utils/types";
+import { Project, User } from "src/app/auth/model/user";
+import { AuthService } from "src/app/auth/services/auth.service";
+import { ProjectsService } from "src/app/auth/services/projects.service";
+import { Nullable } from "src/app/common/utils/types";
 
 @Component({
   selector: "app-profile",

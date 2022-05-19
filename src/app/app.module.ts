@@ -6,7 +6,7 @@ import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ProfileComponent } from "./profile/profile.component";
+import { ProfileComponent } from "./core/pages/profile/profile.component";
 import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
 import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
