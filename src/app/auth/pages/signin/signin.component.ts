@@ -1,32 +1,33 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { Nullable } from "src/app/common/utils/types";
+import { UseUser } from "../../hooks/use-user";
 import { AuthService } from "../../services/auth.service";
+import { ProjectsService } from "../../services/projects.service";
 
 @Component({
   selector: "app-signin",
   templateUrl: "./signin.component.html",
   styleUrls: ["./signin.component.css"],
 })
-export class SignInComponent implements OnInit, OnDestroy {
+export class SignInComponent extends UseUser implements OnInit, OnDestroy {
   email = "";
-  subscription: Nullable<Subscription> = null;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private router: Router,
+    authService: AuthService,
+    projectsService: ProjectsService
+  ) {
+    super(authService, projectsService);
+  }
 
   ngOnInit(): void {
-    this.subscription = this.authService.user.subscribe(user => {
-      if (user) {
-        this.router.navigate(["/"]);
-      }
+    this.handleUserInit(user => {
+      if (user) this.router.navigate(["/"]);
     });
   }
 
   ngOnDestroy(): void {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    this.handleUserDestroy();
   }
 
   handleLogin() {
