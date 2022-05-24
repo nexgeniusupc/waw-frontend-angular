@@ -1,35 +1,41 @@
-import { User } from "../model/user";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
+import { BaseService } from "src/app/common/services/base.service";
+import { Nullable } from "src/app/common/utils/types";
+import { User } from "../model/user";
 
 @Injectable({
   providedIn: "root",
 })
-export class AuthService {
-  static user: User = {
-    preferredName: "John",
-    fullName: "John Doe",
-    email: "john.doe@gmail.com",
-    location: "Lima, Peru",
-    profileViews: 367,
-    biography:
-      "Freelance UX/UI designer, 80+ projects in Web, Mobile (Android & iOS) and creative projects. Open to offers.",
-    about:
-      "I'm more experienced in e-commerce web projects and mobile banking apps, but also like to work with creative projects, such as landing pages or unusual corporate websites.",
-  };
-  static loggedIn = true;
+export class AuthService extends BaseService<User> {
+  private _user = new BehaviorSubject<Nullable<User>>(null);
 
-  static login(): void {
-    this.loggedIn = true;
+  constructor(http: HttpClient) {
+    super("/users", http);
   }
 
-  static logout(): void {
-    this.loggedIn = false;
+  get user() {
+    return this._user;
   }
 
-  static getCurrentUser(): User | null {
-    if (this.loggedIn) {
-      return this.user;
-    }
-    return null;
+  get isLoggedIn() {
+    return this._user.value !== null;
+  }
+
+  login(email: string) {
+    this.fetch<User[]>("get", `${this.endpoint}?email=${email}`).subscribe(
+      res => {
+        if (res.length !== 1) {
+          this._user.next(null);
+          return;
+        }
+        this._user.next(res[0]);
+      }
+    );
+  }
+
+  logout() {
+    this._user.next(null);
   }
 }

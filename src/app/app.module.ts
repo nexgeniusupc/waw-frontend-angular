@@ -6,7 +6,7 @@ import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ProfileComponent } from "./profile/profile.component";
+import { ProfileComponent } from "./core/pages/profile/profile.component";
 import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
 import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
@@ -24,6 +24,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
 
 export const imports: NonNullable<NgModule["imports"]> = [
+  AppRoutingModule,
   BrowserAnimationsModule,
   HttpClientModule,
   FormsModule,
@@ -48,7 +49,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
     SignUpComponent,
     JobsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ...imports],
+  imports: [BrowserModule, ...imports],
   providers: [],
   bootstrap: [AppComponent],
 })
