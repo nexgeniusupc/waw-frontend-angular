@@ -16,6 +16,7 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
+import { MatMenuModule } from "@angular/material/menu";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -23,6 +24,7 @@ import { ProfileComponent } from "./core/pages/profile/profile.component";
 import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
 import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
+import { HeaderComponent } from "./common/components/header/header.component";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
@@ -41,6 +43,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
   MatSortModule,
   MatTooltipModule,
   MatSelectModule,
+  MatMenuModule,
 ];
 
 @NgModule({
@@ -50,6 +53,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
     SignInComponent,
     SignUpComponent,
     JobsComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, ...imports],
   providers: [],

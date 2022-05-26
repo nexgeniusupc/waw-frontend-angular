@@ -1,0 +1,83 @@
+<header
+  role="heading"
+  class="px-4 md:px-8 flex items-center h-20 justify-between sm:justify-start sm:space-x-8 bg-white">
+  <div class="flex items-center h-full space-x-8">
+    <a routerLink="/">
+      <h1 class="text-2xl font-bold">WAW</h1>
+    </a>
+    <nav
+      *ngIf="user !== null"
+      class="h-full pl-8 hidden md:flex items-center border-l border-slate-200">
+      <ul class="flex text-center space-x-12">
+        <a *ngFor="let item of navigation" [routerLink]="item.path">
+          <li class="flex flex-col items-center space-y-2">
+            <mat-icon class="mat-icon-6">
+              {{ item.icon }}
+            </mat-icon>
+            <span class="text-xs font-medium uppercase">
+              {{ item.label }}
+            </span>
+          </li>
+        </a>
+      </ul>
+    </nav>
+  </div>
+  <div
+    class="h-full w-full hidden sm:flex items-center border-x border-slate-200">
+    <mat-icon class="ml-4 mat-icon-6 text-slate-400">search</mat-icon>
+    <input
+      [(ngModel)]="currentSearch"
+      class="px-4 py-3 h-full w-full bg-transparent placeholder:font-light placeholder:text-base placeholder:text-slate-400"
+      [placeholder]="breakpoints.lgPlus ? 'Quick search...' : 'Search...'" />
+  </div>
+  <div
+    class="flex items-center shrink-0 space-x-4 cursor-pointer"
+    [mat-menu-trigger-for]="accountMenu">
+    <div class="rounded-full overflow-hidden w-8 h-8">
+      <img
+        [src]="user?.picture?.href"
+        class="object-cover h-full"
+        *ngIf="user !== null" />
+      <mat-icon *ngIf="user === null" class="mat-icon-8">
+        account_circle
+      </mat-icon>
+    </div>
+    <div class="hidden lg:flex flex-col space-y-1">
+      <span class="text-xs font-medium">
+        Hello, {{ user !== null ? user.preferredName : "Sign In" }}
+      </span>
+      <span *ngIf="user !== null" class="text-xs font-normal text-slate-600">
+        {{ user.profileViews }} views today
+      </span>
+    </div>
+    <mat-icon class="hidden lg:inline-block">expand_more</mat-icon>
+  </div>
+  <mat-menu #accountMenu="matMenu" xPosition="before" class="mt-2 w-40">
+    <ul role="menu">
+      <li *ngFor="let option of accountMenuOptions" role="none">
+        <a
+          *ngIf="option.path && handleVisibile(option.visible)"
+          [routerLink]="option.path"
+          role="menuitem">
+          <button mat-menu-item class="flex items-center">
+            <mat-icon class="mat-icon-6">{{ option.icon }}</mat-icon>
+            <span>{{ option.label }}</span>
+          </button>
+        </a>
+        <button
+          *ngIf="option.command && handleVisibile(option.visible)"
+          (click)="option.command()"
+          mat-menu-item
+          class="flex items-center"
+          role="menuitem">
+          <mat-icon class="mat-icon-6">{{ option.icon }}</mat-icon>
+          <span>{{ option.label }}</span>
+        </button>
+        <span
+          *ngIf="option.separator && handleVisibile(option.visible)"
+          class="my-2 border-t border-gray-300 block w-full"
+          role="separator"></span>
+      </li>
+    </ul>
+  </mat-menu>
+</header>
