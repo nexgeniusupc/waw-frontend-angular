@@ -3,13 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
-
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { ProfileComponent } from "./core/pages/profile/profile.component";
-import { SignInComponent } from "./auth/pages/signin/signin.component";
-import { SignUpComponent } from "./auth/pages/signup/signup.component";
-import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
+import { LayoutModule } from "@angular/cdk/layout";
 
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
@@ -23,11 +17,19 @@ import { MatSortModule } from "@angular/material/sort";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
 
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { ProfileComponent } from "./core/pages/profile/profile.component";
+import { SignInComponent } from "./auth/pages/signin/signin.component";
+import { SignUpComponent } from "./auth/pages/signup/signup.component";
+import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
+
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
   BrowserAnimationsModule,
   HttpClientModule,
   FormsModule,
+  LayoutModule,
   MatToolbarModule,
   MatIconModule,
   MatFormFieldModule,
