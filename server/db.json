@@ -16,7 +16,50 @@
       "picture": {
         "href": "https://unsplash.com/photos/YUu9UAcOKZ4/download?w=640",
         "alt": "John's profile picture"
-      }
+      },
+      "experience": [
+        {
+          "id": 1,
+          "title": "Freelance UX/UI Designer",
+          "company": "Self-employed",
+          "location": "Around the world",
+          "startDate": 1464739200000,
+          "endDate": null,
+          "timeDiff": "5 years 10 months",
+          "description": "Work with clients and studios as freelancer. Work in areas like: e-commerce web projects; creative landing pages; Android and iOS apps; corporate web sites and corporate identity.",
+          "image": {
+            "href": "https://unsplash.com/photos/gcsNOsPEXfs/download?w=640",
+            "alt": "Scrabble tiles and smartphone"
+          }
+        },
+        {
+          "id": 2,
+          "title": "UX/UI designer",
+          "company": "Upwork",
+          "location": "United States",
+          "startDate": 1427846400000,
+          "endDate": 1470009600000,
+          "timeDiff": "2 years 4 months",
+          "description": "New experience with Upwork system. Work in areas like: UX/UI design, graphic design, interaction design, UX research.",
+          "image": {
+            "href": "https://unsplash.com/photos/hhUx08PuYpc/download?w=640",
+            "alt": "Laptop with book in front and lamp in a peaceful night"
+          }
+        }
+      ],
+      "education": [
+        {
+          "id": 1,
+          "university": "University of Arizona",
+          "description": "Bachelor's degree in Computer and Information Systems and Security/Information Assurance",
+          "startYear": 2009,
+          "endYear": 2013,
+          "image": {
+            "href": "https://unsplash.com/photos/QJDzYT_K8Xg/download?w=640",
+            "alt": "University of Arizona"
+          }
+        }
+      ]
     },
     {
       "id": 2,
@@ -95,7 +138,7 @@
     {
       "id": 2,
       "title": "Remote Senior Embedded Android Specialist",
-      "image": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmiro.medium.com%2Fmax%2F1400%2F1*8si943UlaDsBo8i7xm-bGg.png&imgrefurl=https%3A%2F%2Fblog.viki.com%2Fat-the-intersection-of-tech-and-culture-vikis-android-developer-story-ec1d86e17739&tbnid=mh6usaAOiocfJM&vet=12ahUKEwium6askf73AhVDDdQKHVhTDFwQMygFegUIARC6AQ..i&docid=VnMySDOs4je0oM&w=841&h=429&q=android%20specialist%20ofice&ved=2ahUKEwium6askf73AhVDDdQKHVhTDFwQMygFegUIARC6AQ",
+      "image": "https://miro.medium.com/max/875/1*8si943UlaDsBo8i7xm-bGg.png",
       "description": "Hinge Health is building a digital MSK clinic and is looking for experienced embedded developers to improve our computer vision SDK on Android. You will be building a system that uses computer vision to analyze patient movement to help diagnose, treat and prevent MSK conditions.",
       "salaryRange": "$145k-$157k",
       "published": true
