@@ -5,6 +5,9 @@ import { MatTableDataSource } from "@angular/material/table";
 import { ColumnDefinition } from "src/app/common/model/column-definition";
 import { JobOffer } from "../../model/job-offer";
 import { JobsService } from "../../services/jobs.service";
+import { MatDialog } from "@angular/material/dialog";
+import { JobConfirmationDialogComponent } from "../../components/job-confirmation-dialog/job-confirmation-dialog.component";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-jobs-search",
@@ -53,7 +56,11 @@ export class JobsSearchComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(private jobsService: JobsService) {}
+  constructor(
+    private jobsService: JobsService,
+    private dialog: MatDialog,
+    private snackbar: MatSnackBar
+  ) {}
 
   ngOnInit() {
     this.getAll();
@@ -80,5 +87,18 @@ export class JobsSearchComponent implements OnInit, AfterViewInit {
       return match?.label || value;
     }
     return value;
+  }
+
+  confirmationDialog() {
+    this.dialog
+      .open(JobConfirmationDialogComponent)
+      .afterClosed()
+      .subscribe((response: string) => {
+        if (response === "accept") {
+          this.snackbar.open("You have successfully applied for the job");
+          return;
+        }
+        this.snackbar.open("You have cancelled your application");
+      });
   }
 }
