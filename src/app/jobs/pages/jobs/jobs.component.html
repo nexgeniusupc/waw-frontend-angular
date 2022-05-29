@@ -49,7 +49,15 @@
       (click)="this.cancelEdit()">
       Cancel
     </button>
+    <mat-form-field appearance="outline" color="primary" class="left-40" >
+      <mat-label>Offer Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Lead UX" #input>
+      <mat-icon matSuffix>filter_list</mat-icon>
+    </mat-form-field>
   </form>
+
+
+
   <table
     mat-table
     matSort
