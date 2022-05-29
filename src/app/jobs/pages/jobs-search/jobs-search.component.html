@@ -1,1 +1,38 @@
-<p>jobs-search works!</p>
+<main class="p-4">
+  <h1>Available Job Offers</h1>
+  <table
+    mat-table
+    matSort
+    [dataSource]="this.dataSource"
+    class="mat-elevation-z2 w-full">
+    <ng-container
+      *ngFor="let column of this.columns"
+      [matColumnDef]="column.key">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ column.label }}
+      </th>
+      <td
+        mat-cell
+        *matCellDef="let item"
+        [ngClass]="[column.styles?.cellClassName || '']">
+        <div [ngClass]="[column.styles?.containerClassName || '']">
+          {{ this.getDisplayableColumn(item, column) }}
+        </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let item">
+        <button mat-button color="primary" aria-label="Apply button">
+          Apply
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="this.displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    class="mat-elevation-z2"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 15]"
+    showFirstLastButtons></mat-paginator>
+</main>
