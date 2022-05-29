@@ -10,6 +10,8 @@ import { ProfileComponent } from "./core/pages/profile/profile.component";
 import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
 import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
+import { JobsSearchComponent } from "./jobs/pages/jobs-search/jobs-search.component";
+import { JobConfirmationDialogComponent } from "./jobs/components/job-confirmation-dialog/job-confirmation-dialog.component";
 
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
@@ -22,8 +24,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
-import { JobsSearchComponent } from "./jobs/pages/jobs-search/jobs-search.component";
-import { JobConfirmationDialogComponent } from "./jobs/components/job-confirmation-dialog/job-confirmation-dialog.component";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
@@ -41,6 +43,8 @@ export const imports: NonNullable<NgModule["imports"]> = [
   MatSortModule,
   MatTooltipModule,
   MatSelectModule,
+  MatDialogModule,
+  MatSnackBarModule,
 ];
 
 @NgModule({
