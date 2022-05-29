@@ -25,7 +25,11 @@
         <span class="block text-center">Action</span>
       </th>
       <td mat-cell *matCellDef="let item" class="w-24">
-        <button mat-button color="primary" aria-label="Apply button">
+        <button
+          mat-button
+          (click)="confirmationDialog()"
+          color="primary"
+          aria-label="Apply button">
           Apply
         </button>
       </td>
