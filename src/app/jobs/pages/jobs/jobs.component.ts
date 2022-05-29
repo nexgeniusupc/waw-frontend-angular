@@ -6,6 +6,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { ColumnDefinition } from "src/app/common/model/column-definition";
 import { JobOffer } from "../../model/job-offer";
 import { JobsService } from "../../services/jobs.service";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-jobs",
@@ -45,6 +46,7 @@ export class JobsComponent implements OnInit, AfterViewInit {
       falseLabel: "Unpublished",
     },
   ];
+
   displayedColumns = [...this.columns.map(item => item.key), "actions"];
 
   @ViewChild("jobsForm", { static: false })
@@ -56,7 +58,10 @@ export class JobsComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(private jobsService: JobsService) {}
+  constructor(
+    private jobsService: JobsService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   get isEditMode() {
     return !!this.currentItem.id;
@@ -84,6 +89,11 @@ export class JobsComponent implements OnInit, AfterViewInit {
     this.jobsService.create(item).subscribe(response => {
       this.dataSource.data = [...this.dataSource.data, response];
     });
+    this._snackBar.open("The offer has been added successfully  🎉", "", {
+      duration: 5000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+    });
   }
 
   getAll() {
@@ -98,6 +108,11 @@ export class JobsComponent implements OnInit, AfterViewInit {
         current => current.id !== id
       );
     });
+    this._snackBar.open("The offer has been deleted successfully 👍", "", {
+      duration: 5000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+    });
   }
 
   updateJob(id: number, item: JobOffer) {
@@ -106,6 +121,11 @@ export class JobsComponent implements OnInit, AfterViewInit {
         if (current.id === id) return response;
         return current;
       });
+    });
+    this._snackBar.open("The offer has been updated successfully 🎉", "", {
+      duration: 5000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
     });
   }
 
