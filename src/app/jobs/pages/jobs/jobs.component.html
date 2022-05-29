@@ -39,11 +39,11 @@
         {{ field.label }}
       </mat-slide-toggle>
     </ng-container>
-    <button mat-button type="submit" color="primary">
+    <button mat-raised-button type="submit" color="primary">
       {{ this.isEditMode ? "Update" : "Add" }}
     </button>
     <button
-      mat-button
+      mat-raised-button
       color="warn"
       *ngIf="this.isEditMode"
       (click)="this.cancelEdit()">
@@ -54,11 +54,11 @@
     mat-table
     matSort
     [dataSource]="this.dataSource"
-    class="mat-elevation-z2 w-full">
+    class="mat-elevation-z2 w-full  border-separate border border-slate-300 table-auto ">
     <ng-container
       *ngFor="let column of this.columns"
       [matColumnDef]="column.key">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      <th  mat-header-cell *matHeaderCellDef mat-sort-header=""  class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
         {{ column.label }}
       </th>
       <td
@@ -70,8 +70,10 @@
         </div>
       </td>
     </ng-container>
+
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
+
+      <th mat-header-cell *matHeaderCellDef class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Actions</th>
       <td mat-cell *matCellDef="let item">
         <button
           mat-icon-button
@@ -89,11 +91,15 @@
         </button>
       </td>
     </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="this.displayedColumns"></tr>
+<!--    <td><img src="https://picsum.photos/id/{{item.id}}/150/100" alt="thumbnail"></td>-->
     <tr
       mat-row
       *matRowDef="let row; columns: this.displayedColumns"
-      [ngClass]="{ 'editable-row': this.currentItem.id === row.id }"></tr>
+      [ngClass]="{ 'editable-row': this.currentItem.id === row.id }" class = "border border-slate-700 odd:bg-gray-100 even:bg-white"
+      ></tr>
+
   </table>
   <mat-paginator
     class="mat-elevation-z2"
