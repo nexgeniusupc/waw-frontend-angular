@@ -160,4 +160,8 @@ export class JobsComponent implements OnInit, AfterViewInit {
   useMatFormField(field: ColumnDefinition<JobOffer>) {
     return !field.hidden && ["text", "number", "dropdown"].includes(field.type);
   }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }
