@@ -22,6 +22,7 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
+import { JobsSearchComponent } from "./jobs/pages/jobs-search/jobs-search.component";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
@@ -48,6 +49,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
     SignInComponent,
     SignUpComponent,
     JobsComponent,
+    JobsSearchComponent,
   ],
   imports: [BrowserModule, ...imports],
   providers: [],
