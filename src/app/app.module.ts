@@ -23,6 +23,7 @@ import { MatSortModule } from "@angular/material/sort";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
 import { JobsSearchComponent } from "./jobs/pages/jobs-search/jobs-search.component";
+import { JobConfirmationDialogComponent } from "./jobs/components/job-confirmation-dialog/job-confirmation-dialog.component";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
@@ -50,6 +51,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
     SignUpComponent,
     JobsComponent,
     JobsSearchComponent,
+    JobConfirmationDialogComponent,
   ],
   imports: [BrowserModule, ...imports],
   providers: [],
