@@ -1,7 +1,10 @@
 <main class="p-4">
   <h1>Active Job Offers</h1>
+  <ng-template #loading><mat-progress-bar mode="determinate" value="80" color="warn"></mat-progress-bar></ng-template>
+
+
   <form #jobsForm="ngForm" (submit)="this.handleSubmit()" class="space-x-4">
-    <ng-container *ngFor="let field of this.columns">
+    <ng-container *ngFor="let field of this.columns" >
       <mat-form-field *ngIf="this.useMatFormField(field)">
         <mat-label>{{ field.label }}</mat-label>
         <input
@@ -30,6 +33,7 @@
             {{ option.label }}
           </mat-option>
         </mat-select>
+
       </mat-form-field>
       <mat-slide-toggle
         *ngIf="field.type === 'toggle'"
@@ -40,6 +44,7 @@
         {{ field.label }}
       </mat-slide-toggle>
     </ng-container>
+
     <button mat-raised-button type="submit" color="primary" aria-label="Button that displays a tooltip when focused or hovered over update or add icon"
             matTooltip="Update or add new job offer">
       {{ this.isEditMode ? "Update" : "Add" }}
@@ -69,6 +74,7 @@
     <ng-container
       *ngFor="let column of this.columns"
       [matColumnDef]="column.key">
+
       <th  mat-header-cell *matHeaderCellDef mat-sort-header=""  class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
         {{ column.label }}
       </th>
@@ -98,6 +104,7 @@
           color="warn"
           aria-label="Button that displays a tooltip when focused or hovered over delete icon"
           (click)="this.deleteJob(item.id)" matTooltip="Delete job offer">
+
           <mat-icon aria-hidden="true">delete</mat-icon>
         </button>
       </td>
@@ -105,6 +112,7 @@
 
     <tr mat-header-row *matHeaderRowDef="this.displayedColumns"></tr>
 <!--    <td><img src="https://picsum.photos/id/{{item.id}}/150/100" alt="thumbnail"></td>-->
+
     <tr
       mat-row
       *matRowDef="let row; columns: this.displayedColumns"
@@ -112,6 +120,7 @@
       ></tr>
 
   </table>
+
   <mat-paginator
     class="mat-elevation-z2"
     [pageSize]="5"
