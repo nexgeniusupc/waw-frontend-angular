@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
@@ -12,7 +11,7 @@ import { JobsService } from "../../services/jobs.service";
   templateUrl: "./jobs-search.component.html",
   styleUrls: ["./jobs-search.component.css"],
 })
-export class JobsSearchComponent implements OnInit {
+export class JobsSearchComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<JobOffer>();
   columns: ColumnDefinition<JobOffer>[] = [
     { key: "id", label: "ID", hidden: true, type: "number" },
@@ -38,14 +37,12 @@ export class JobsSearchComponent implements OnInit {
   ];
   displayedColumns = [...this.columns.map(item => item.key), "actions"];
 
-  @ViewChild("jobsForm", { static: false })
-  jobsForm!: NgForm;
-
   @ViewChild(MatPaginator, { static: true })
   paginator!: MatPaginator;
 
   @ViewChild(MatSort)
   sort!: MatSort;
+
   constructor(private jobsService: JobsService) {}
 
   ngOnInit() {
@@ -56,11 +53,13 @@ export class JobsSearchComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
   getAll() {
     this.jobsService.getAll().subscribe(response => {
       this.dataSource.data = response;
     });
   }
+
   getDisplayableColumn(item: JobOffer, column: ColumnDefinition<JobOffer>) {
     const value = item[column.key];
     if (column.type === "toggle") {
