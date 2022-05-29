@@ -14,13 +14,19 @@ import { JobsService } from "../../services/jobs.service";
 export class JobsSearchComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<JobOffer>();
   columns: ColumnDefinition<JobOffer>[] = [
-    { key: "id", label: "ID", hidden: true, type: "number" },
+    {
+      key: "id",
+      label: "ID",
+      hidden: true,
+      type: "number",
+      styles: { cellClassName: "w-24" },
+    },
     {
       key: "title",
       label: "Title",
       type: "text",
       styles: {
-        cellClassName: "w-56",
+        cellClassName: "w-64",
         containerClassName: "py-2 pr-4",
       },
     },
@@ -29,11 +35,15 @@ export class JobsSearchComponent implements OnInit, AfterViewInit {
       label: "Description",
       type: "text",
       styles: {
-        cellClassName: "w-96",
         containerClassName: "py-2 pr-4",
       },
     },
-    { key: "salaryRange", label: "Salary Range", type: "text" },
+    {
+      key: "salaryRange",
+      label: "Salary Range",
+      type: "text",
+      styles: { cellClassName: "w-36" },
+    },
   ];
   displayedColumns = [...this.columns.map(item => item.key), "actions"];
 
