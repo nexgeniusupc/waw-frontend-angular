@@ -7,7 +7,7 @@
       color="warn"></mat-progress-bar>
   </ng-template>
 
-  <form #jobsForm="ngForm" (submit)="this.handleSubmit()" class="justify-between">
+  <form #jobsForm="ngForm" (submit)="this.handleSubmit()" class="flex justify-between">
     <ng-container *ngFor="let field of this.columns">
       <mat-form-field *ngIf="this.useMatFormField(field)">
         <mat-label>{{ field.label }}</mat-label>
@@ -145,7 +145,7 @@
     <tr class="mat-row" *matNoDataRow>
       <td class="mat-cell" colspan="4">The filter "{{input.value}}" entered in the field does not match any data in the offers. "</td>
     </tr>
-    <tr mat-footer-row *matFooterRowDef="['disclaimer']" class="count-footer"></tr>
+    <tr mat-footer-row *matFooterRowDef="['information']" class="count-footer"></tr>
   </table>
   <mat-paginator
     class="mat-elevation-z2"
