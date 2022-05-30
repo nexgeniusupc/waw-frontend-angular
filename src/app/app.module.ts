@@ -22,6 +22,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
@@ -39,6 +41,8 @@ export const imports: NonNullable<NgModule["imports"]> = [
   MatSortModule,
   MatTooltipModule,
   MatSelectModule,
+  MatSnackBarModule,
+  MatProgressBarModule,
 ];
 
 @NgModule({
