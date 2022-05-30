@@ -6,6 +6,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { ColumnDefinition } from "src/app/common/model/column-definition";
 import { JobOffer } from "../../model/job-offer";
 import { JobsService } from "../../services/jobs.service";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-jobs",
@@ -45,6 +46,7 @@ export class JobsComponent implements OnInit, AfterViewInit {
       falseLabel: "Unpublished",
     },
   ];
+
   displayedColumns = [...this.columns.map(item => item.key), "actions"];
 
   @ViewChild("jobsForm", { static: false })
@@ -56,7 +58,10 @@ export class JobsComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(private jobsService: JobsService) {}
+  constructor(
+    private jobsService: JobsService,
+    private snackbar: MatSnackBar
+  ) {}
 
   get isEditMode() {
     return !!this.currentItem.id;
@@ -83,6 +88,9 @@ export class JobsComponent implements OnInit, AfterViewInit {
   createJob(item: JobOffer) {
     this.jobsService.create(item).subscribe(response => {
       this.dataSource.data = [...this.dataSource.data, response];
+      this.snackbar.open("The offer has been added successfully 🎉", "", {
+        duration: 5000,
+      });
     });
   }
 
@@ -97,6 +105,9 @@ export class JobsComponent implements OnInit, AfterViewInit {
       this.dataSource.data = this.dataSource.data.filter(
         current => current.id !== id
       );
+      this.snackbar.open("The offer has been deleted successfully 👍", "", {
+        duration: 5000,
+      });
     });
   }
 
@@ -105,6 +116,9 @@ export class JobsComponent implements OnInit, AfterViewInit {
       this.dataSource.data = this.dataSource.data.map(current => {
         if (current.id === id) return response;
         return current;
+      });
+      this.snackbar.open("The offer has been updated successfully 🎉", "", {
+        duration: 5000,
       });
     });
   }
@@ -139,5 +153,11 @@ export class JobsComponent implements OnInit, AfterViewInit {
 
   useMatFormField(field: ColumnDefinition<JobOffer>) {
     return !field.hidden && ["text", "number", "dropdown"].includes(field.type);
+  }
+
+  applyFilter(event: KeyboardEvent) {
+    if (event.target === null) return;
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }

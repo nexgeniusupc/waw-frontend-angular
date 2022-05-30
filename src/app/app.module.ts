@@ -5,6 +5,18 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { LayoutModule } from "@angular/cdk/layout";
 
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { ProfileComponent } from "./core/pages/profile/profile.component";
+import { SignInComponent } from "./auth/pages/signin/signin.component";
+import { SignUpComponent } from "./auth/pages/signup/signup.component";
+import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
+import { HeaderComponent } from "./common/components/header/header.component";
+import { JobsSearchComponent } from "./jobs/pages/jobs-search/jobs-search.component";
+import { JobConfirmationDialogComponent } from "./jobs/components/job-confirmation-dialog/job-confirmation-dialog.component";
+import { ChangepasswordComponent } from "./auth/pages/changepassword/changepassword.component";
+import { ResetpasswordComponent } from "./auth/pages/resetpassword/resetpassword.component";
+
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -17,14 +29,9 @@ import { MatSortModule } from "@angular/material/sort";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
 import { MatMenuModule } from "@angular/material/menu";
-
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { ProfileComponent } from "./core/pages/profile/profile.component";
-import { SignInComponent } from "./auth/pages/signin/signin.component";
-import { SignUpComponent } from "./auth/pages/signup/signup.component";
-import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
-import { HeaderComponent } from "./common/components/header/header.component";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
@@ -44,6 +51,9 @@ export const imports: NonNullable<NgModule["imports"]> = [
   MatTooltipModule,
   MatSelectModule,
   MatMenuModule,
+  MatDialogModule,
+  MatSnackBarModule,
+  MatProgressBarModule,
 ];
 
 @NgModule({
@@ -54,6 +64,10 @@ export const imports: NonNullable<NgModule["imports"]> = [
     SignUpComponent,
     JobsComponent,
     HeaderComponent,
+    JobsSearchComponent,
+    JobConfirmationDialogComponent,
+    ResetpasswordComponent,
+    ChangepasswordComponent,
   ],
   imports: [BrowserModule, ...imports],
   providers: [],
