@@ -1,0 +1,63 @@
+name: sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - server/*
+      - db.json
+      - routes.json
+      - .github/workflows/sync.yml
+
+jobs:
+  file-sync:
+    name: 'run file sync'
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.sync-output.outputs.pull_request_urls }}
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v3
+      - name: Sync files to all repositories
+        id: sync-output
+        uses: BetaHuhn/repo-file-sync-action@v1
+        with:
+          GH_PAT: ${{ secrets.BOT_PAT }}
+          PR_LABELS: |
+            chore
+            scope: sync
+          ASSIGNEES: dalbitresb12-bot
+          REVIEWERS: ${{ github.actor }}
+          BRANCH_PREFIX: chore/file-sync
+          COMMIT_PREFIX: 'chore(sync): '
+          COMMIT_EACH_FILE: false
+  enable-automerge:
+    name: 'enable auto-merge'
+    needs: [file-sync]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        url: ${{ fromJson(needs.file-sync.outputs.matrix) }}
+    steps:
+      - name: Extract pull request info
+        id: pr-info
+        env:
+          CURRENT_URL: ${{ matrix.url }}
+        shell: python
+        run: |
+          import os, re
+          url = os.environ["CURRENT_URL"]
+          match = re.fullmatch("^https:\/\/github.com\/(.+)\/(.+)\/pull\/(\d+)$", url)
+          if (match is None):
+              print(f"Unable to find a match in {url}")
+              sys.exit(1)
+          print(f"::set-output name=repository::{match[1]}/{match[2]}")
+          print(f"::set-output name=number::{match[3]}")
+      - name: Enable auto-merge for created pull requests
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ secrets.BOT_PAT }}
+          repository: ${{ steps.pr-info.outputs.repository }}
+          pull-request-number: ${{ steps.pr-info.outputs.number }}
+          merge-method: merge

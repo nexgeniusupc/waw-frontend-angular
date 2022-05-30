@@ -4,6 +4,7 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
     "source.fixAll.prettier": true
   },
   "editor.linkedEditing": true,
@@ -11,13 +12,12 @@
   "editor.bracketPairColorization.enabled": true,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "*.ts": "${capture}.js",
+    "*.ts": "${capture}.js, ${capture}.html, ${capture}.css, ${capture}.spec.ts",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-    "*.component.ts": "${capture}.component.html, ${capture}.component.css, ${capture}.component.spec.ts",
     "package.json": "package-lock.json, yarn.lock",
     ".eslintrc*": ".eslintignore, .eslintcache",
     ".prettierrc*": ".prettierignore",
-    ".stylelintrc*": ".stylelintignore",
+    ".stylelintrc*": ".stylelintignore, .stylelintcache",
     "environment.ts": "environment.*.ts",
     "tsconfig.json": "tsconfig.*.json"
   },
