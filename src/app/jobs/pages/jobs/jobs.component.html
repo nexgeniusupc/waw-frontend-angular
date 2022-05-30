@@ -43,8 +43,8 @@
         [name]="field.key"
         [required]="field.required ?? false"
         [(ngModel)]="this.currentItem[field.key]"
-        aria-label="Button that displays a tooltip when focused or hovered over job offer publication status toogle"
-        matTooltip="job offer publication status">
+        aria-label="Publication status"
+        matTooltip="Publication status">
         {{ field.label }}
       </mat-slide-toggle>
     </ng-container>
@@ -53,17 +53,16 @@
       mat-raised-button
       type="submit"
       color="primary"
-      aria-label="Button that displays a tooltip when focused or hovered over update or add icon"
-      matTooltip="Update or add new job offer">
-      {{ this.isEditMode ? "Update" : "Add" }}
+      [matTooltip]="(isEditMode ? 'Update' : 'Add') + ' new job offer'">
+      {{ isEditMode ? "Update" : "Add" }}
     </button>
     <button
       mat-raised-button
       color="warn"
       *ngIf="this.isEditMode"
       (click)="this.cancelEdit()"
-      aria-label="Button that displays a tooltip when focused or hovered over cancel edit icon"
-      matTooltip="Cancel edit job offer">
+      aria-label="Cancel job offer edit"
+      matTooltip="Cancel job offer edit">
       Cancel
     </button>
     <mat-form-field appearance="outline" color="primary" class="left-40">
@@ -113,17 +112,17 @@
         <button
           mat-icon-button
           color="primary"
-          aria-label="Button that displays a tooltip when focused or hovered over update icon"
           (click)="this.startEdit(item)"
-          matTooltip="Edit job offer">
+          aria-label="Edit"
+          matTooltip="Edit">
           <mat-icon aria-hidden="true">edit</mat-icon>
         </button>
         <button
           mat-icon-button
           color="warn"
-          aria-label="Button that displays a tooltip when focused or hovered over delete icon"
           (click)="this.deleteJob(item.id)"
-          matTooltip="Delete job offer">
+          aria-label="Delete"
+          matTooltip="Delete">
           <mat-icon aria-hidden="true">delete</mat-icon>
         </button>
       </td>
