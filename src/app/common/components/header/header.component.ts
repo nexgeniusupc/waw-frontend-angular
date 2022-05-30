@@ -79,6 +79,12 @@ export class HeaderComponent extends UseUser implements OnInit, OnDestroy {
     return value();
   }
 
+  handleSearch() {
+    if (this.authService.isLoggedIn) {
+      this.router.navigate(["/account/search"]);
+    }
+  }
+
   ngOnInit(): void {
     this.handleUserInit();
   }

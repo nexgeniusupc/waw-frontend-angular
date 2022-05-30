@@ -23,7 +23,8 @@
     </nav>
   </div>
   <div
-    class="h-full w-full hidden sm:flex items-center border-x border-slate-200">
+    class="h-full w-full hidden sm:flex items-center border-x border-slate-200"
+    (click)="handleSearch()">
     <mat-icon class="ml-4 mat-icon-6 text-slate-400">search</mat-icon>
     <input
       [(ngModel)]="currentSearch"
