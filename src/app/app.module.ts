@@ -12,6 +12,8 @@ import { SignUpComponent } from "./auth/pages/signup/signup.component";
 import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
 import { JobsSearchComponent } from "./jobs/pages/jobs-search/jobs-search.component";
 import { JobConfirmationDialogComponent } from "./jobs/components/job-confirmation-dialog/job-confirmation-dialog.component";
+import { ChangepasswordComponent } from "./auth/pages/changepassword/changepassword.component";
+import { ResetpasswordComponent } from "./auth/pages/resetpassword/resetpassword.component";
 
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
@@ -58,6 +60,8 @@ export const imports: NonNullable<NgModule["imports"]> = [
     JobsComponent,
     JobsSearchComponent,
     JobConfirmationDialogComponent,
+    ResetpasswordComponent,
+    ChangepasswordComponent,
   ],
   imports: [BrowserModule, ...imports],
   providers: [],
