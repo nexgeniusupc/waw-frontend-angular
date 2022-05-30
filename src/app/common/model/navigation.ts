@@ -29,3 +29,15 @@ export type MenuItem = {
       command: (event?: Event) => void;
     }
 );
+
+export type NestedNavItem = {
+  label: string;
+  items?: NestedNavItem[];
+};
+
+export type Languages = "en_US" | "es_PE";
+
+export type LanguageDef = {
+  label: string;
+  code: Languages;
+};
