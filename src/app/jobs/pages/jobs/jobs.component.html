@@ -128,12 +128,24 @@
         </button>
       </td>
     </ng-container>
+
+    <ng-container matColumnDef="information">
+      <td mat-footer-cell *matFooterCellDef colspan="5">
+        In total there are {{ dataSource ? dataSource.data.length : 0 }} job offers
+        registered in your account.
+      </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="this.displayedColumns"></tr>
     <tr
       mat-row
       *matRowDef="let row; columns: this.displayedColumns"
       [ngClass]="{ 'editable-row': this.currentItem.id === row.id }"
       class="border border-slate-700 odd:bg-gray-100 even:bg-white"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">The filter "{{input.value}}" entered in the field does not match any data in the offers. "</td>
+    </tr>
+    <tr mat-footer-row *matFooterRowDef="['disclaimer']" class="count-footer"></tr>
   </table>
   <mat-paginator
     class="mat-elevation-z2"
