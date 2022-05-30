@@ -12,6 +12,25 @@ export interface Project {
   image?: UserImage;
 }
 
+export interface Experience {
+  id: number;
+  title: string;
+  company: string;
+  location: string;
+  startDate: number;
+  endDate: number | null;
+  timeDiff: string;
+  description: string;
+  image?: UserImage;
+}
+export interface Education {
+  id: number;
+  university: string;
+  description: string;
+  startYear: number;
+  endYear: number;
+  image: UserImage;
+}
 export interface User {
   id: number;
   preferredName: string;
@@ -23,4 +42,5 @@ export interface User {
   about: string;
   cover?: UserImage;
   picture?: UserImage;
+  experience: Experience[];
 }
