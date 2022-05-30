@@ -7,7 +7,7 @@
       color="warn"></mat-progress-bar>
   </ng-template>
 
-  <form #jobsForm="ngForm" (submit)="this.handleSubmit()" class="space-x-4">
+  <form #jobsForm="ngForm" (submit)="this.handleSubmit()" class="flex justify-between">
     <ng-container *ngFor="let field of this.columns">
       <mat-form-field *ngIf="this.useMatFormField(field)">
         <mat-label>{{ field.label }}</mat-label>
@@ -53,6 +53,7 @@
       mat-raised-button
       type="submit"
       color="primary"
+      class="box-border h-12 w-28" aria-label="Button that displays a tooltip when focused or hovered over update or add icon"
       [matTooltip]="(isEditMode ? 'Update' : 'Add') + ' new job offer'">
       {{ isEditMode ? "Update" : "Add" }}
     </button>
@@ -65,7 +66,7 @@
       matTooltip="Cancel job offer edit">
       Cancel
     </button>
-    <mat-form-field appearance="outline" color="primary" class="left-40">
+    <mat-form-field appearance="outline" color="primary" class="order-last">
       <mat-label>Offer Filter</mat-label>
       <input
         matInput
@@ -127,12 +128,24 @@
         </button>
       </td>
     </ng-container>
+
+    <ng-container matColumnDef="information">
+      <td mat-footer-cell *matFooterCellDef colspan="5">
+        In total there are {{ dataSource ? dataSource.data.length : 0 }} job offers
+        registered in your account.
+      </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="this.displayedColumns"></tr>
     <tr
       mat-row
       *matRowDef="let row; columns: this.displayedColumns"
       [ngClass]="{ 'editable-row': this.currentItem.id === row.id }"
       class="border border-slate-700 odd:bg-gray-100 even:bg-white"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">The filter "{{input.value}}" entered in the field does not match any data in the offers. "</td>
+    </tr>
+    <tr mat-footer-row *matFooterRowDef="['information']" class="count-footer"></tr>
   </table>
   <mat-paginator
     class="mat-elevation-z2"
