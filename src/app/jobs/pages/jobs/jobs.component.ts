@@ -60,7 +60,7 @@ export class JobsComponent implements OnInit, AfterViewInit {
 
   constructor(
     private jobsService: JobsService,
-    private _snackBar: MatSnackBar
+    private snackbar: MatSnackBar
   ) {}
 
   get isEditMode() {
@@ -88,11 +88,9 @@ export class JobsComponent implements OnInit, AfterViewInit {
   createJob(item: JobOffer) {
     this.jobsService.create(item).subscribe(response => {
       this.dataSource.data = [...this.dataSource.data, response];
-    });
-    this._snackBar.open("The offer has been added successfully  🎉", "", {
-      duration: 5000,
-      horizontalPosition: "right",
-      verticalPosition: "top",
+      this.snackbar.open("The offer has been added successfully 🎉", "", {
+        duration: 5000,
+      });
     });
   }
 
@@ -107,11 +105,9 @@ export class JobsComponent implements OnInit, AfterViewInit {
       this.dataSource.data = this.dataSource.data.filter(
         current => current.id !== id
       );
-    });
-    this._snackBar.open("The offer has been deleted successfully 👍", "", {
-      duration: 5000,
-      horizontalPosition: "right",
-      verticalPosition: "top",
+      this.snackbar.open("The offer has been deleted successfully 👍", "", {
+        duration: 5000,
+      });
     });
   }
 
@@ -121,11 +117,9 @@ export class JobsComponent implements OnInit, AfterViewInit {
         if (current.id === id) return response;
         return current;
       });
-    });
-    this._snackBar.open("The offer has been updated successfully 🎉", "", {
-      duration: 5000,
-      horizontalPosition: "right",
-      verticalPosition: "top",
+      this.snackbar.open("The offer has been updated successfully 🎉", "", {
+        duration: 5000,
+      });
     });
   }
 
