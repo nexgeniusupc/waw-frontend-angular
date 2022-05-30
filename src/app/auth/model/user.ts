@@ -31,6 +31,7 @@ export interface Education {
   endYear: number;
   image: UserImage;
 }
+
 export interface User {
   id: number;
   preferredName: string;
@@ -43,4 +44,5 @@ export interface User {
   cover?: UserImage;
   picture?: UserImage;
   experience: Experience[];
+  education: Education[];
 }
