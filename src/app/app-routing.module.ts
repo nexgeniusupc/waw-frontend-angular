@@ -1,8 +1,13 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { ProfileComponent } from "./profile/profile.component";
+import { ResetpasswordComponent } from "./auth/pages/resetpassword/resetpassword.component";
+import { ChangepasswordComponent } from "./auth/pages/changepassword/changepassword.component";
 
-const routes: Routes = [{ path: "", component: ProfileComponent }];
+const routes: Routes = [
+  { path: "", redirectTo: "account/profile", pathMatch: "full" },
+  { path: "account/resetpassword", component: ResetpasswordComponent },
+  { path: "account/changepassword", component: ChangepasswordComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
