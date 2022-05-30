@@ -7,7 +7,7 @@
       color="warn"></mat-progress-bar>
   </ng-template>
 
-  <form #jobsForm="ngForm" (submit)="this.handleSubmit()" class="space-x-4">
+  <form #jobsForm="ngForm" (submit)="this.handleSubmit()" class="justify-between">
     <ng-container *ngFor="let field of this.columns">
       <mat-form-field *ngIf="this.useMatFormField(field)">
         <mat-label>{{ field.label }}</mat-label>
