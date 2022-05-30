@@ -53,6 +53,7 @@
       mat-raised-button
       type="submit"
       color="primary"
+      class="box-border h-12 w-28" aria-label="Button that displays a tooltip when focused or hovered over update or add icon"
       [matTooltip]="(isEditMode ? 'Update' : 'Add') + ' new job offer'">
       {{ isEditMode ? "Update" : "Add" }}
     </button>
@@ -65,7 +66,7 @@
       matTooltip="Cancel job offer edit">
       Cancel
     </button>
-    <mat-form-field appearance="outline" color="primary" class="left-40">
+    <mat-form-field appearance="outline" color="primary" class="order-last">
       <mat-label>Offer Filter</mat-label>
       <input
         matInput
