@@ -16,5 +16,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("./src/plugins/tailwind/mat-icon-sizes")],
 };

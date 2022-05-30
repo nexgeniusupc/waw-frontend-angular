@@ -3,6 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import { LayoutModule } from "@angular/cdk/layout";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -10,6 +11,7 @@ import { ProfileComponent } from "./core/pages/profile/profile.component";
 import { SignInComponent } from "./auth/pages/signin/signin.component";
 import { SignUpComponent } from "./auth/pages/signup/signup.component";
 import { JobsComponent } from "./jobs/pages/jobs/jobs.component";
+import { HeaderComponent } from "./common/components/header/header.component";
 import { JobsSearchComponent } from "./jobs/pages/jobs-search/jobs-search.component";
 import { JobConfirmationDialogComponent } from "./jobs/components/job-confirmation-dialog/job-confirmation-dialog.component";
 import { ChangepasswordComponent } from "./auth/pages/changepassword/changepassword.component";
@@ -26,15 +28,18 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
+import { MatMenuModule } from "@angular/material/menu";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { FooterComponent } from "./common/components/footer/footer.component";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
   BrowserAnimationsModule,
   HttpClientModule,
   FormsModule,
+  LayoutModule,
   MatToolbarModule,
   MatIconModule,
   MatFormFieldModule,
@@ -46,6 +51,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
   MatSortModule,
   MatTooltipModule,
   MatSelectModule,
+  MatMenuModule,
   MatDialogModule,
   MatSnackBarModule,
   MatProgressBarModule,
@@ -58,10 +64,12 @@ export const imports: NonNullable<NgModule["imports"]> = [
     SignInComponent,
     SignUpComponent,
     JobsComponent,
+    HeaderComponent,
     JobsSearchComponent,
     JobConfirmationDialogComponent,
     ResetpasswordComponent,
     ChangepasswordComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, ...imports],
   providers: [],
