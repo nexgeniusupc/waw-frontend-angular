@@ -26,6 +26,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
@@ -45,6 +46,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
   MatSelectModule,
   MatDialogModule,
   MatSnackBarModule,
+  MatProgressBarModule,
 ];
 
 @NgModule({
