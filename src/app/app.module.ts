@@ -16,6 +16,7 @@ import { JobsSearchComponent } from "./jobs/pages/jobs-search/jobs-search.compon
 import { JobConfirmationDialogComponent } from "./jobs/components/job-confirmation-dialog/job-confirmation-dialog.component";
 import { ChangepasswordComponent } from "./auth/pages/changepassword/changepassword.component";
 import { ResetpasswordComponent } from "./auth/pages/resetpassword/resetpassword.component";
+import { JobAddDialogComponent } from "./jobs/components/job-add-dialog/job-add-dialog.component";
 
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
@@ -33,7 +34,6 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { FooterComponent } from "./common/components/footer/footer.component";
-import { JobAddDialogComponent } from "./jobs/components/job-add-dialog/job-add-dialog.component";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
