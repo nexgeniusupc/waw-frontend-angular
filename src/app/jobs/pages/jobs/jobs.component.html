@@ -9,7 +9,7 @@
 
   <form
     #jobsForm="ngForm"
-    (submit)="this.handleSubmit()"
+    (submit)="this.handleSubmitX()"
     class="flex justify-between">
     <ng-container *ngFor="let field of this.columns">
       <mat-form-field *ngIf="this.useMatFormField(field)">
@@ -119,9 +119,11 @@
         <button
           mat-icon-button
           color="primary"
-          (click)="this.startEdit(item)"
+          (click)="modifyJob(item)"
           aria-label="Edit"
           matTooltip="Edit">
+          <!--          this.startEdit(item) va en click-->
+
           <mat-icon aria-hidden="true">edit</mat-icon>
         </button>
         <button
