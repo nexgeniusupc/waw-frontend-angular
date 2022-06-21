@@ -114,6 +114,13 @@ export class JobsComponent implements OnInit, AfterViewInit {
     });
   }
 
+  modifyJob(item: JobOffer) {
+    this.dialog.open(JobAddDialogComponent, {
+      width: "550px",
+      height: "500px",
+      data: item,
+    });
+  }
   updateJob(id: number, item: JobOffer) {
     this.jobsService.update(id, item).subscribe(response => {
       this.dataSource.data = this.dataSource.data.map(current => {
@@ -126,7 +133,7 @@ export class JobsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  handleSubmit() {
+  handleSubmitX() {
     console.log("handling submit...");
     if (!this.jobsForm.form.valid) return;
     console.log("passed validation...");
