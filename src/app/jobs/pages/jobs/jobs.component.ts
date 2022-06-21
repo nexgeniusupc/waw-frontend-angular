@@ -121,6 +121,7 @@ export class JobsComponent implements OnInit, AfterViewInit {
       data: item,
     });
   }
+
   updateJob(id: number, item: JobOffer) {
     this.jobsService.update(id, item).subscribe(response => {
       this.dataSource.data = this.dataSource.data.map(current => {
