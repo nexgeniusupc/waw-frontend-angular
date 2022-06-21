@@ -79,9 +79,22 @@ export class JobAddDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  get isEditMode() {
+    return !!this.currentItem.id;
+  }
+
   createJob(item: JobOffer) {
     this.jobsService.create(item).subscribe(response => {
       this.dataSource.data = [...this.dataSource.data, response];
+    });
+  }
+
+  updateJob(id: number, item: JobOffer) {
+    this.jobsService.update(id, item).subscribe(response => {
+      this.dataSource.data = this.dataSource.data.map(current => {
+        if (current.id === id) return response;
+        return current;
+      });
     });
   }
 
@@ -96,9 +109,13 @@ export class JobAddDialogComponent implements OnInit {
     if (!this.jobsForm.form.valid) return;
     console.log("passed validation...");
     const job = this.currentItem as JobOffer;
-
-    console.log("sending create...");
-    this.createJob(job);
+    if (this.isEditMode) {
+      console.log("sending update...");
+      this.updateJob(job.id, job);
+    } else {
+      console.log("sending create...");
+      this.createJob(job);
+    }
 
     this.cancelEdit();
     console.log("finished...");
