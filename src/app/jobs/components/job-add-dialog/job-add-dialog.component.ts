@@ -50,7 +50,8 @@ export class JobAddDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<JobAddDialogComponent>,
-    private jobsService: JobsService
+    private jobsService: JobsService,
+    @Inject(MAT_DIALOG_DATA) public editData: JobOffer
   ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
