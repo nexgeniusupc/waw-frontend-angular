@@ -7,6 +7,8 @@ import { ColumnDefinition } from "src/app/common/model/column-definition";
 import { JobOffer } from "../../model/job-offer";
 import { JobsService } from "../../services/jobs.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { MatDialog } from "@angular/material/dialog";
+import { JobAddDialogComponent } from "../../components/job-add-dialog/job-add-dialog.component";
 
 @Component({
   selector: "app-jobs",
@@ -60,7 +62,8 @@ export class JobsComponent implements OnInit, AfterViewInit {
 
   constructor(
     private jobsService: JobsService,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    public dialog: MatDialog
   ) {}
 
   get isEditMode() {
