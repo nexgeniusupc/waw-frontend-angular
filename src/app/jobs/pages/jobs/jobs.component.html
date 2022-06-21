@@ -41,6 +41,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+
       <mat-slide-toggle
         *ngIf="field.type === 'toggle'"
         [name]="field.key"
@@ -58,6 +59,7 @@
       color="primary"
       class="box-border h-12 w-28"
       aria-label="Button that displays a tooltip when focused or hovered over update or add icon"
+      (click)="openDialog()"
       [matTooltip]="(isEditMode ? 'Update' : 'Add') + ' new job offer'">
       {{ isEditMode ? "Update" : "Add" }}
     </button>
