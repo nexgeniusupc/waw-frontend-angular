@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, Inject, OnInit, ViewChild } from "@angular/core";
 import { ColumnDefinition } from "../../../common/model/column-definition";
 import { JobOffer } from "../../model/job-offer";
-import { MatDialogRef } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { NgForm } from "@angular/forms";
 import { MatTableDataSource } from "@angular/material/table";
 import { JobsService } from "../../services/jobs.service";
