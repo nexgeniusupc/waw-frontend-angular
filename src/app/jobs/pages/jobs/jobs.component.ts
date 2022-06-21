@@ -160,4 +160,15 @@ export class JobsComponent implements OnInit, AfterViewInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(JobAddDialogComponent, {
+      width: "550px",
+      height: "500px",
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("The dialog was closed");
+    });
+  }
 }
