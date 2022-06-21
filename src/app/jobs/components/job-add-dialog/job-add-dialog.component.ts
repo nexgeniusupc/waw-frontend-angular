@@ -55,7 +55,21 @@ export class JobAddDialogComponent implements OnInit {
   ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.editData);
+    if (this.editData) {
+      this.jobsForm.form.controls["title"].setValue(this.editData.title);
+      this.jobsForm.form.controls["description"].setValue(
+        this.editData.description
+      );
+      this.jobsForm.form.controls["salaryRange"].setValue(
+        this.editData.salaryRange
+      );
+      this.jobsForm.form.controls["published"].setValue(
+        this.editData.published
+      );
+    }
+  }
 
   useMatFormField(field: ColumnDefinition<JobOffer>) {
     return !field.hidden && ["text", "number", "dropdown"].includes(field.type);
