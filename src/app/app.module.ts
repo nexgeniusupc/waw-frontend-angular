@@ -33,6 +33,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { FooterComponent } from "./common/components/footer/footer.component";
+import { CompaniesComponent } from "./employers/pages/companies/companies.component";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
@@ -70,6 +71,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
     ResetpasswordComponent,
     ChangepasswordComponent,
     FooterComponent,
+    CompaniesComponent,
   ],
   imports: [BrowserModule, ...imports],
   providers: [],
