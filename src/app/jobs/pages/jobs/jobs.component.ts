@@ -80,7 +80,12 @@ export class JobsComponent implements OnInit, AfterViewInit {
   }
 
   startEdit(item: JobOffer) {
-    this.currentItem = { ...item };
+    this.dialog.open(JobAddDialogComponent, {
+      width: "550px",
+      height: "500px",
+      data: item,
+    });
+    // this.currentItem = { ...item };
   }
 
   cancelEdit() {
@@ -111,14 +116,6 @@ export class JobsComponent implements OnInit, AfterViewInit {
       this.snackbar.open("The offer has been deleted successfully 👍", "", {
         duration: 5000,
       });
-    });
-  }
-
-  modifyJob(item: JobOffer) {
-    this.dialog.open(JobAddDialogComponent, {
-      width: "550px",
-      height: "500px",
-      data: item,
     });
   }
 

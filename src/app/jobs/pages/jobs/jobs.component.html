@@ -119,11 +119,9 @@
         <button
           mat-icon-button
           color="primary"
-          (click)="modifyJob(item)"
+          (click)="this.startEdit(item)"
           aria-label="Edit"
           matTooltip="Edit">
-          <!--          this.startEdit(item) va en click-->
-
           <mat-icon aria-hidden="true">edit</mat-icon>
         </button>
         <button
