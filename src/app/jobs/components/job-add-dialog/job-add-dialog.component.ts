@@ -54,7 +54,6 @@ export class JobAddDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public editData: JobOffer
   ) {}
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   ngOnInit(): void {
     console.log(this.editData);
     if (this.editData) {
