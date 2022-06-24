@@ -131,20 +131,15 @@ export class JobsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  handleSubmitX() {
-    console.log("handling submit...");
+  handleSubmit() {
     if (!this.jobsForm.form.valid) return;
-    console.log("passed validation...");
     const job = this.currentItem as JobOffer;
     if (this.isEditMode) {
-      console.log("sending update...");
       this.updateJob(job.id, job);
     } else {
-      console.log("sending create...");
       this.createJob(job);
     }
     this.cancelEdit();
-    console.log("finished...");
   }
 
   getDisplayableColumn(item: JobOffer, column: ColumnDefinition<JobOffer>) {
@@ -175,8 +170,7 @@ export class JobsComponent implements OnInit, AfterViewInit {
       height: "500px",
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log("The dialog was closed");
-    });
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    dialogRef.afterClosed().subscribe(result => {});
   }
 }

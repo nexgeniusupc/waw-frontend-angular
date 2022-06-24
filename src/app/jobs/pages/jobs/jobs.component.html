@@ -9,7 +9,7 @@
 
   <form
     #jobsForm="ngForm"
-    (submit)="this.handleSubmitX()"
+    (submit)="this.handleSubmit()"
     class="flex justify-between">
     <ng-container *ngFor="let field of this.columns">
       <mat-form-field *ngIf="this.useMatFormField(field)">
