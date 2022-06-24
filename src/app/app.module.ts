@@ -16,6 +16,8 @@ import { JobsSearchComponent } from "./jobs/pages/jobs-search/jobs-search.compon
 import { JobConfirmationDialogComponent } from "./jobs/components/job-confirmation-dialog/job-confirmation-dialog.component";
 import { ChangepasswordComponent } from "./auth/pages/changepassword/changepassword.component";
 import { ResetpasswordComponent } from "./auth/pages/resetpassword/resetpassword.component";
+import { CompaniesComponent } from "./employers/pages/companies/companies.component";
+import { FooterComponent } from "./common/components/footer/footer.component";
 
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
@@ -32,8 +34,7 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
-import { FooterComponent } from "./common/components/footer/footer.component";
-import { CompaniesComponent } from "./employers/pages/companies/companies.component";
+import { MatCard, MatCardModule } from "@angular/material/card";
 
 export const imports: NonNullable<NgModule["imports"]> = [
   AppRoutingModule,
@@ -56,6 +57,7 @@ export const imports: NonNullable<NgModule["imports"]> = [
   MatDialogModule,
   MatSnackBarModule,
   MatProgressBarModule,
+  MatCardModule,
 ];
 
 @NgModule({
