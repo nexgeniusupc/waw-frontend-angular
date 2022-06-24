@@ -142,6 +142,18 @@ export class JobsComponent implements OnInit, AfterViewInit {
     this.cancelEdit();
   }
 
+  getDisplayableColumn(item: JobOffer, column: ColumnDefinition<JobOffer>) {
+    const value = item[column.key];
+    if (column.type === "toggle") {
+      return (value ? column.trueLabel : column.falseLabel) || value;
+    }
+    if (column.type === "dropdown") {
+      const match = column.options.find(i => i.value === value);
+      return match?.label || value;
+    }
+    return value;
+  }
+
   useMatFormField(field: ColumnDefinition<JobOffer>) {
     return !field.hidden && ["text", "number", "dropdown"].includes(field.type);
   }
