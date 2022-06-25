@@ -68,8 +68,12 @@
         {{ item.address }}
       </mat-card-subtitle>
       <mat-card-actions align="end">
-        <button mat-button (click)="this.editCompany(item)">Edit</button>
-        <button mat-button (click)="this.deleteCompany(item.id)">Delete</button>
+        <button mat-icon-button (click)="this.editCompany(item)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="this.deleteCompany(item.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
