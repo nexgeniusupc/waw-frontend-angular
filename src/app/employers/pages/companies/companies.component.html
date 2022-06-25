@@ -1,20 +1,76 @@
-<main class="p-4">
-  <h1 class="my-4">Associate Companies</h1>
-  <div class="flex flex-wrap">
-    <div class="w-1/2 p-4" *ngFor="let item of dataSource">
-      <mat-card class="mat-elevation-z4">
-        <mat-card-title> {{ item.name }}</mat-card-title>
-        <mat-card-subtitle class="fs-4">
-          {{ item.email }}
-        </mat-card-subtitle>
-        <mat-card-subtitle>
-          {{ item.address }}
-        </mat-card-subtitle>
-        <mat-card-actions align="end">
-          <button mat-button>Edit</button>
-          <button mat-button>Delete</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+<h1 class="my-4">Associate Companies</h1>
+<section class="flex m-4">
+  <h2 class="p-4 align-middle">
+    {{ isEditMode ? "Edit company information" : "Add new company" }}
+  </h2>
+  <form #companiesForm="ngForm" (submit)="handleSubmit()">
+    <mat-form-field appearance="fill" class="p-4">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        #input
+        maxlength="100"
+        type="text"
+        name="name"
+        required
+        [(ngModel)]="this.currentCompany.name" />
+      <mat-hint align="start">
+        Max characters: {{ input.value?.length || 0 }}/100
+      </mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="p-4">
+      <mat-label>Address</mat-label>
+      <input
+        matInput
+        maxlength="256"
+        type="text"
+        name="address"
+        [(ngModel)]="this.currentCompany.address" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="p-4">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        maxlength="256"
+        type="email"
+        name="email"
+        [(ngModel)]="this.currentCompany.email" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      class="box-border h-12 w-28 align-middle m-4"
+      type="submit"
+      color="primary"
+      aria-label="Button that displays a tooltip when focused or hovered over update or add icon"
+      [matTooltip]="(isEditMode ? 'Update' : 'Add') + ' company'">
+      {{ isEditMode ? "Update" : "Add" }}
+    </button>
+    <button
+      mat-raised-button
+      class="box-border h-12 w-28 align-middle m-4"
+      color="warn"
+      *ngIf="this.isEditMode"
+      (click)="this.cancelEdit()"
+      aria-label="Cancel company information edit"
+      matTooltip="Cancel company information edit">
+      Cancel
+    </button>
+  </form>
+</section>
+<div class="flex flex-wrap m-4">
+  <div class="w-1/2 p-4" *ngFor="let item of dataSource">
+    <mat-card class="mat-elevation-z4">
+      <mat-card-title> {{ item.name }}</mat-card-title>
+      <mat-card-subtitle>
+        {{ item.email }}
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        {{ item.address }}
+      </mat-card-subtitle>
+      <mat-card-actions align="end">
+        <button mat-button (click)="this.editCompany(item)">Edit</button>
+        <button mat-button (click)="this.deleteCompany(item.id)">Delete</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
-</main>
+</div>
