@@ -55,7 +55,6 @@ export class JobAddDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.editData);
     if (this.editData) {
       this.jobsForm.form.controls["title"].setValue(this.editData.title);
       this.jobsForm.form.controls["description"].setValue(
@@ -104,19 +103,14 @@ export class JobAddDialogComponent implements OnInit {
   }
 
   handleSubmit() {
-    console.log("handling submit...");
     if (!this.jobsForm.form.valid) return;
-    console.log("passed validation...");
     const job = this.currentItem as JobOffer;
     if (this.isEditMode) {
-      console.log("sending update...");
       this.updateJob(job.id, job);
     } else {
-      console.log("sending create...");
       this.createJob(job);
     }
 
     this.cancelEdit();
-    console.log("finished...");
   }
 }
