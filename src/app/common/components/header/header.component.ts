@@ -43,6 +43,12 @@ export class HeaderComponent extends UseUser implements OnInit, OnDestroy {
       visible: () => this.user !== null,
     },
     {
+      label: "Companies",
+      path: "account/companies",
+      icon: "apartment",
+      visible: () => this.user !== null,
+    },
+    {
       label: "Settings",
       path: "/account/settings",
       icon: "settings",
