@@ -62,18 +62,13 @@ export class CompaniesComponent implements OnInit {
   }
 
   handleSubmit() {
-    console.log("handling submit...");
     if (!this.companiesForm.form.valid) return;
-    console.log("passed validation...");
     const company = this.currentCompany as Company;
     if (this.isEditMode) {
-      console.log("sending update...");
       this.updateCompany(company.id, company);
     } else {
-      console.log("sending create...");
       this.createCompany(company);
     }
     this.cancelEdit();
-    console.log("finished...");
   }
 }
