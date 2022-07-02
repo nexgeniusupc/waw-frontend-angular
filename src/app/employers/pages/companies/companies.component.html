@@ -1,0 +1,84 @@
+<h1 class="my-8 text-center text-2xl font-semibold">Associate Companies</h1>
+<section class="flex m-4 justify-center">
+  <h2 class="text-center font-medium text-lg py-8">
+    {{ isEditMode ? "Edit company information" : "Add new company" }}
+  </h2>
+  <form #companiesForm="ngForm" (submit)="handleSubmit()">
+    <mat-form-field appearance="fill" class="p-4">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        #input
+        maxlength="100"
+        type="text"
+        name="name"
+        required
+        [(ngModel)]="this.currentCompany.name" />
+      <mat-hint align="start">
+        Max characters: {{ input.value?.length || 0 }}/100
+      </mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="p-4">
+      <mat-label>Address</mat-label>
+      <input
+        matInput
+        maxlength="256"
+        type="text"
+        name="address"
+        [(ngModel)]="this.currentCompany.address" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="p-4">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        maxlength="256"
+        type="email"
+        name="email"
+        required
+        [(ngModel)]="this.currentCompany.email" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      class="box-border h-12 w-28"
+      type="submit"
+      color="primary"
+      aria-label="Button that displays a tooltip when focused or hovered over update or add icon"
+      [matTooltip]="(isEditMode ? 'Update' : 'Add') + ' company'">
+      {{ isEditMode ? "Update" : "Add" }}
+    </button>
+    <button
+      class="box-border h-12 w-28"
+      mat-raised-button
+      color="warn"
+      *ngIf="this.isEditMode"
+      (click)="this.cancelEdit()"
+      aria-label="Cancel company information edit"
+      matTooltip="Cancel company information edit">
+      Cancel
+    </button>
+  </form>
+</section>
+<div class="grid md:grid-cols-2 grid-cols-1 gap-4 m-4">
+  <div *ngFor="let item of dataSource">
+    <mat-card class="mat-elevation-z4">
+      <mat-card-title class="text-center"> {{ item.name }}</mat-card-title>
+      <mat-card-subtitle class="text-center">
+        {{ item.email }}
+      </mat-card-subtitle>
+      <mat-card-content class="font-medium text-lg">
+        {{ item.address }}
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-icon-button (click)="this.editCompany(item)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="this.deleteCompany(item.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
