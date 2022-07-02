@@ -175,5 +175,37 @@
       "salaryRange": "$135k-$157k",
       "published": false
     }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "Google Inc.",
+      "address": "Silicon Valley",
+      "email": "google@support.com"
+    },
+    {
+      "id": 2,
+      "name": "Microsoft Inc.",
+      "address": "Silicon Valley",
+      "email": "microsoft@support.com"
+    },
+    {
+      "id": 3,
+      "name": "Meta",
+      "address": "Silicon Valley",
+      "email": "meta@support.com"
+    },
+    {
+      "id": 4,
+      "name": "Apple Inc.",
+      "address": "Silicon Valley",
+      "email": "apple@support.com"
+    },
+    {
+      "id": 5,
+      "name": "Oracle",
+      "address": "Silicon Valley",
+      "email": "oracle@support.com"
+    }
   ]
 }
