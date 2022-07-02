@@ -131,17 +131,6 @@ export class JobsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  handleSubmit() {
-    if (!this.jobsForm.form.valid) return;
-    const job = this.currentItem as JobOffer;
-    if (this.isEditMode) {
-      this.updateJob(job.id, job);
-    } else {
-      this.createJob(job);
-    }
-    this.cancelEdit();
-  }
-
   getDisplayableColumn(item: JobOffer, column: ColumnDefinition<JobOffer>) {
     const value = item[column.key];
     if (column.type === "toggle") {

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { JobAddDialogComponent } from "./job-add-dialog.component";
+import { imports } from "src/app/app.module";
 
 describe("JobAddDialogComponent", () => {
   let component: JobAddDialogComponent;
@@ -8,6 +9,7 @@ describe("JobAddDialogComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [...imports],
       declarations: [JobAddDialogComponent],
     }).compileComponents();
   });
