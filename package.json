@@ -19,8 +19,7 @@
     "lint:fix:eslint": "eslint --cache --ext .js,.ts,.html --fix .",
     "lint:fix:css": "stylelint --cache src/**/*.css --fix",
     "lint:fix:md": "markdownlint-cli2-fix README.md \"**/*.md\" \".github/**/*.md\" \"#node_modules\"",
-    "lint:fix:prettier": "prettier --write .",
-    "prepare": "husky install"
+    "lint:fix:prettier": "prettier --write ."
   },
   "dependencies": {
     "@angular/animations": "~13.3.0",
@@ -47,24 +46,19 @@
     "@angular-eslint/template-parser": "13.2.1",
     "@angular/cli": "~13.3.5",
     "@angular/compiler-cli": "~13.3.0",
-    "@commitlint/cli": "^16.2.4",
-    "@commitlint/config-conventional": "^16.2.4",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
     "autoprefixer": "^10.4.7",
-    "cz-conventional-changelog": "^3.0.1",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
-    "husky": "^7.0.4",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "lint-staged": "^12.4.1",
     "markdownlint-cli2": "^0.4.0",
     "postcss": "^8.4.13",
     "prettier": "^2.6.2",
@@ -74,16 +68,5 @@
     "stylelint-config-standard-scss": "^3.0.0",
     "tailwindcss": "^3.0.24",
     "typescript": "~4.6.2"
-  },
-  "lint-staged": {
-    "*.{js,ts}": "eslint --cache --fix",
-    "*.{css,scss}": "stylelint --cache --fix",
-    "*.{js,ts,html,css,scss,md,json,yml}": "prettier --write",
-    "*.md": "markdownlint-cli2-fix"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
   }
 }
