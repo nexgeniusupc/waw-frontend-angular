@@ -13,12 +13,10 @@
     "lint": "concurrently -s -n lint: 'npm:lint:*(!fix)'",
     "lint:eslint": "eslint --cache --ext .js,.ts,.html .",
     "lint:css": "stylelint --cache src/**/*.css",
-    "lint:md": "markdownlint-cli2 README.md \"**/*.md\" \".github/**/*.md\" \"#node_modules\"",
     "lint:prettier": "prettier --check .",
     "lint:fix": "concurrently -s -n lint:fix: 'npm:lint:fix:*'",
     "lint:fix:eslint": "eslint --cache --ext .js,.ts,.html --fix .",
     "lint:fix:css": "stylelint --cache src/**/*.css --fix",
-    "lint:fix:md": "markdownlint-cli2-fix README.md \"**/*.md\" \".github/**/*.md\" \"#node_modules\"",
     "lint:fix:prettier": "prettier --write ."
   },
   "dependencies": {
@@ -59,7 +57,6 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "markdownlint-cli2": "^0.4.0",
     "postcss": "^8.4.13",
     "prettier": "^2.6.2",
     "stylelint": "^14.8.2",
