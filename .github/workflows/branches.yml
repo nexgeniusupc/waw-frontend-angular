@@ -1,4 +1,4 @@
-name: branches
+name: Branches
 
 on:
   pull_request:
@@ -10,16 +10,9 @@ on:
 
 jobs:
   check-base-branch:
-    name: check base
+    name: Check Base
     runs-on: ubuntu-latest
     steps:
-      - name: Branch is related to CI and is based on main
-        if: ${{ startsWith(github.head_ref, 'ci/') && github.base_ref == 'main' }}
-        env:
-          BASE_BRANCH: ${{ github.base_ref }}
-        run: |
-          echo "Current base branch: $BASE_BRANCH"
-          echo "Branch rule exception: Continuous Integration branches allowed to be merged into main"
       - name: Branch is develop being merged to main for release
         if: ${{ github.base_ref == 'main' && github.head_ref == 'develop' }}
         env:
