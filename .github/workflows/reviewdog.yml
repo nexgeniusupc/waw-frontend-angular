@@ -1,4 +1,4 @@
-name: reviewdog
+name: Reviewdog
 
 on:
   push:
@@ -9,13 +9,13 @@ on:
 
 jobs:
   eslint:
-    name: 'eslint (node: ${{ matrix.node }})'
+    name: 'ESLint (node: ${{ matrix.node }})'
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [16]
+        node: [16, 18]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
@@ -29,13 +29,13 @@ jobs:
           fail_on_error: true
           eslint_flags: '.'
   prettier:
-    name: 'prettier (node: ${{ matrix.node }})'
+    name: 'Prettier (node: ${{ matrix.node }})'
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [16]
+        node: [16, 18]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
@@ -48,13 +48,13 @@ jobs:
           filter_mode: 'nofilter'
           fail_on_error: true
   stylelint:
-    name: 'stylelint (node: ${{ matrix.node }})'
+    name: 'Stylelint (node: ${{ matrix.node }})'
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [16]
+        node: [16, 18]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
@@ -68,13 +68,13 @@ jobs:
           fail_on_error: true
           stylelint_input: 'src/**/*.css'
   tsc:
-    name: 'tsc (node: ${{ matrix.node }})'
+    name: 'TypeScript (node: ${{ matrix.node }})'
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [16]
+        node: [16, 18]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}

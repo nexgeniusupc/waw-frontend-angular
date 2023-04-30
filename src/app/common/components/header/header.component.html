@@ -36,7 +36,7 @@
     [mat-menu-trigger-for]="accountMenu">
     <div class="rounded-full overflow-hidden w-8 h-8">
       <img
-        [src]="user?.picture?.href"
+        [src]="user.picture?.href"
         class="object-cover h-full"
         *ngIf="user !== null" />
       <mat-icon *ngIf="user === null" class="mat-icon-8">

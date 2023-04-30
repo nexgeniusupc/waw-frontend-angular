@@ -1,4 +1,4 @@
-name: node
+name: Node
 
 on:
   push:
@@ -9,13 +9,13 @@ on:
 
 jobs:
   build:
-    name: 'build (node: ${{ matrix.node }})'
+    name: 'Build (node: ${{ matrix.node }})'
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [16]
+        node: [16, 18]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
@@ -25,14 +25,14 @@ jobs:
       - name: Build
         run: npm run build
   test:
-    name: 'test (node: ${{ matrix.node }})'
+    name: 'Test (node: ${{ matrix.node }})'
     runs-on: ubuntu-latest
     needs: [build]
     strategy:
       matrix:
-        node: [16]
+        node: [16, 18]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
