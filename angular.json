@@ -97,12 +97,6 @@
           "configurations": {
             "production": {
               "devServerTarget": "waw-frontend-angular:serve:production"
-            },
-            "ci": {
-              "devServerTarget": "waw-frontend-angular:serve:production",
-              "watch": false,
-              "headless": true,
-              "browser": "chrome"
             }
           }
         },
