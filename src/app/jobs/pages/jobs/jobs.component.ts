@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { MatLegacyPaginator as MatPaginator } from "@angular/material/legacy-paginator";
+import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
-import { MatLegacyTableDataSource as MatTableDataSource } from "@angular/material/legacy-table";
+import { MatTableDataSource } from "@angular/material/table";
 import { ColumnDefinition } from "src/app/common/model/column-definition";
 import { JobOffer } from "../../model/job-offer";
 import { JobsService } from "../../services/jobs.service";
-import { MatLegacySnackBar as MatSnackBar } from "@angular/material/legacy-snack-bar";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-jobs",

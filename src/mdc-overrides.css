@@ -1,0 +1,9 @@
+/* stylelint-disable declaration-no-important */
+/* stylelint-disable selector-class-pattern */
+
+/* This fixes the unwanted border when mat inputs are focused */
+mat-form-field.mat-form-field-appearance-outline
+  .mdc-notched-outline
+  .mdc-notched-outline__notch {
+  border-right-width: 0;
+}

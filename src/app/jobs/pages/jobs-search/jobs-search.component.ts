@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
-import { MatLegacyPaginator as MatPaginator } from "@angular/material/legacy-paginator";
+import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
-import { MatLegacyTableDataSource as MatTableDataSource } from "@angular/material/legacy-table";
+import { MatTableDataSource } from "@angular/material/table";
 import { ColumnDefinition } from "src/app/common/model/column-definition";
 import { JobOffer } from "../../model/job-offer";
 import { JobsService } from "../../services/jobs.service";
-import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
+import { MatDialog } from "@angular/material/dialog";
 import { JobConfirmationDialogComponent } from "../../components/job-confirmation-dialog/job-confirmation-dialog.component";
-import { MatLegacySnackBar as MatSnackBar } from "@angular/material/legacy-snack-bar";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-jobs-search",
