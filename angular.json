@@ -31,6 +31,14 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -40,13 +48,14 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+            "e2e": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.e2e.ts"
+                }
+              ],
+              "outputHashing": "none"
             }
           },
           "defaultConfiguration": "production"
@@ -54,11 +63,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "development": {
+              "browserTarget": "waw-frontend-angular:build:development"
+            },
             "production": {
               "browserTarget": "waw-frontend-angular:build:production"
             },
-            "development": {
-              "browserTarget": "waw-frontend-angular:build:development"
+            "e2e": {
+              "browserTarget": "waw-frontend-angular:build:e2e"
             }
           },
           "defaultConfiguration": "development"
@@ -117,7 +129,7 @@
               "devServerTarget": "waw-frontend-angular:serve:production"
             },
             "ci": {
-              "devServerTarget": "waw-frontend-angular:serve:production",
+              "devServerTarget": "waw-frontend-angular:serve:e2e",
               "browser": "chrome"
             }
           }
