@@ -31,6 +31,14 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -40,13 +48,14 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+            "e2e": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.e2e.ts"
+                }
+              ],
+              "outputHashing": "none"
             }
           },
           "defaultConfiguration": "production"
@@ -54,11 +63,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "development": {
+              "browserTarget": "waw-frontend-angular:build:development"
+            },
             "production": {
               "browserTarget": "waw-frontend-angular:build:production"
             },
-            "development": {
-              "browserTarget": "waw-frontend-angular:build:development"
+            "e2e": {
+              "browserTarget": "waw-frontend-angular:build:e2e"
             }
           },
           "defaultConfiguration": "development"
@@ -86,12 +98,51 @@
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "waw-frontend-angular:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "waw-frontend-angular:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "waw-frontend-angular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "waw-frontend-angular:serve:production"
+            },
+            "ci": {
+              "devServerTarget": "waw-frontend-angular:serve:e2e",
+              "browser": "chrome"
+            }
+          }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": ["@angular-eslint/schematics"],
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@angular-eslint/schematics",
+      "@schematics/angular"
+    ],
     "analytics": "14912cdc-d6cf-423b-847b-7202aa0d2139"
   },
   "schematics": {
