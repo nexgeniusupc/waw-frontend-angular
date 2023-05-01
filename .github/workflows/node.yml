@@ -77,8 +77,10 @@ jobs:
         run: npm ci
       - name: Run E2E tests with backend
         uses: BerniWittmann/background-server-action@v1
+        env:
+          spring_profiles_active: h2
         with:
-          start: 'java -jar -Dspring.profiles.active=prod,h2 ${{ steps.jar.outputs.JAR_FILENAME }}'
+          start: 'java -jar ${{ steps.jar.outputs.JAR_FILENAME }}'
           command: 'npm run cypress:run:ci'
           command-windows: 'npm run cypress:run:ci'
           wait-on: 'http://localhost:8080/_/actuator/health'
