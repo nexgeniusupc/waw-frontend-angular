@@ -1,12 +1,13 @@
+import user from "../fixtures/user.json";
 import offer from "../fixtures/offer.json";
 
 describe("Offers", () => {
-  const email = "john.doe@example.com";
+  const email = user[0].email;
 
   beforeEach(() => {
-    cy.intercept("get", `http://localhost:8080/users?email=${email}`, {
-      fixture: "user.json",
-    }).as("getUser");
+    cy.intercept("get", `http://localhost:8080/users?email=${email}`, user).as(
+      "getUser"
+    );
 
     cy.visit("/account/signin");
     cy.get('[data-cy="email"]').type(email);
