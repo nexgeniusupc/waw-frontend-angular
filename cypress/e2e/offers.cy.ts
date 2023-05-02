@@ -18,7 +18,7 @@ describe("Offers", () => {
   });
 
   it("should create a new offer", () => {
-    cy.get('[ng-reflect-router-link="/account/jobs"]').click();
+    cy.get('[href="/account/jobs"]').click();
     cy.url().should("include", "/account/jobs");
 
     cy.intercept("get", "http://localhost:8080/jobs", []).as(
