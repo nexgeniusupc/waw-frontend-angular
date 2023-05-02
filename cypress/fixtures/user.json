@@ -1,0 +1,22 @@
+[
+  {
+    "preferredName": "John",
+    "fullName": "John Doe",
+    "email": "john.doe@gmail.com",
+    "location": "Lima, Peru",
+    "profileViews": 367,
+    "biography": "Freelance UX/UI designer, 80+ projects in Web, Mobile (Android & iOS) and creative projects. Open to offers.",
+    "about": "I'm more experienced in e-commerce web projects and mobile banking apps, but also like to work with creative projects, such as landing pages or unusual corporate websites.",
+    "cover": {
+      "href": "https://unsplash.com/photos/YLSwjSy7stw/download?w=640",
+      "alt": "Books on a bookshelf"
+    },
+    "picture": {
+      "href": "https://unsplash.com/photos/YUu9UAcOKZ4/download?w=640",
+      "alt": "John Doe's profile picture"
+    },
+    "projects": [],
+    "experience": [],
+    "education": []
+  }
+]
