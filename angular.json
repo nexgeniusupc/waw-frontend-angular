@@ -107,8 +107,8 @@
             "headless": false
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "waw-frontend-angular:serve:production"
+            "ci": {
+              "devServerTarget": "waw-frontend-angular:serve:e2e"
             }
           }
         },
